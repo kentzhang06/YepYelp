@@ -8,8 +8,7 @@ export const signup = user => (
         password: user.password,
         first_name: user.firstName,
         last_name: user.lastName,
-        zip_code: user.zipCode,
-        birthday: user.birthday
+        zip_code: user.zipCode
       }
     }
   })

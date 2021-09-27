@@ -9,8 +9,7 @@ class SessionForm extends React.Component {
       password: "",
       firstName: "",
       lastName: "",
-      zipCode: "",
-      birthday: new Date()
+      zipCode: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,6 +24,10 @@ class SessionForm extends React.Component {
 
   update(field) {
     return (e) => this.setState({ [field]: e.target.value});
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   render() {
@@ -42,9 +45,6 @@ class SessionForm extends React.Component {
         </label>
         <label> Zip Code:
           <input type="text" value={this.state.zipCode} onChange={this.update('zipCode')} />
-        </label>
-        <label> Birthday:
-          <input type="date" onChange={this.update('birthday')} />
         </label>
       </div>
       : <div> </div>;
