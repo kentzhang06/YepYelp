@@ -10,7 +10,7 @@ class SessionForm extends React.Component {
       firstName: "",
       lastName: "",
       zipCode: "",
-      birthday: ""
+      birthday: new Date()
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,7 +24,6 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-    console.log(this.state.birthday.toString())
     return (e) => this.setState({ [field]: e.target.value});
   }
 
