@@ -1,3 +1,86 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #fad6a5;
+}
+
+#nav-bar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  font-family: 'Headland One', serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#nav-bar-buttons button{
+  margin-inline: 10px;
+  font-family: 'Headland One', serif;
+  border: none;
+  background-color: transparent;
+  color: black;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+  }
+
+}
+#nav-bar-buttons #signup-button{
+  border: 2px solid black;
+}
+
+#nav-bar-logo {
+  display: flex;
+  
+  font-size: 20px;
+}
+
+#fish-icon {
+  width: 40px;
+  height: auto;
+}
+
+#naruto-home {
+  width: 400px;
+  height: auto;
+  opacity: 0.60;
+}
+
+#home-logo {
+  font-size: 40px;
+  font-family: 'Headland One', serif;
+  text-align: center;
+}
+
+#home-main {
+  left: 50%;
+  bottom: 20%;
+  transform: translate(-50%,0);
+  position: absolute;
+  z-index: 1;
+}
+
+.form-container {
+  margin: 20px;
+  width: 50%;
+}
+
+.form-name-input {
+  display: flex;
+}
+
+.form-name-input input {
+  width: 50%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  input {
+    margin: 3px;
+  }
+}

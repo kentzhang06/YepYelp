@@ -33,33 +33,28 @@ class SessionForm extends React.Component {
   render() {
     const { formType, errors } = this.props;
     let displayErrors = (errors) ? (errors.map((err, i) => <li key={i}>{err}</li>) ) : <div></div>;
-    let formLink = (formType === "login") ? (<Link to="/signup">Sign Up</Link>) : (<Link to="/login">Login</Link>);
+    let formLink = (formType === "Login") ? (<Link to="/signup">Sign Up</Link>) : (<Link to="/login">Login</Link>);
     
-    let signupDisplay = (formType === "signup") ?
-      <div>
-        <label> First Name:
-          <input type="text" value={this.state.firstName} onChange={this.update('firstName')} />
-        </label>
-        <label> Last Name:
-          <input type="text" value={this.state.lastName} onChange={this.update('lastName')} />
-        </label>
-        <label> Zip Code:
-          <input type="text" value={this.state.zipCode} onChange={this.update('zipCode')} />
-        </label>
+    let nameDisplay = (formType === "Signup") ?
+      <div className="form-name-input">
+        <input type="text" placeholder="First Name" value={this.state.firstName} onChange={this.update('firstName')} />
+        <input type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.update('lastName')} />
       </div>
       : <div> </div>;
 
+    let zipDisplay = (formType === "Signup") ?
+      <input type="text" placeholder="ZIP Code" value={this.state.zipCode} onChange={this.update('zipCode')} />
+
+      : <div> </div>;
+
     return(
-      <div>
-        <h2>{formType}</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label> Email:
-            <input type="text" value={this.state.email} onChange={this.update('email')} />
-          </label>
-          <label> Password:
-            <input type="password" value={this.state.password} onChange={this.update('password')} />
-          </label>
-          {signupDisplay}
+      <div className="form-container">
+        <h2>{formType} for YepYelp</h2>
+        <form id="form" onSubmit={this.handleSubmit}>
+          {nameDisplay}
+          <input type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
+          <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
+          {zipDisplay}
           <button>{formType}</button>
         </form>
         {formLink}

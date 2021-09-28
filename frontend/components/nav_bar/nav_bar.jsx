@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import fishIcon from '../../../app/assets/images/fish.png';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -7,25 +8,18 @@ class NavBar extends React.Component {
 
     this.demoUser = {
       email: "example@d.com",
-      password: "demopass",
-      firstName: "Demo",
-      lastName: "Dood",
-      zipCode: "99999"
+      password: "demopass"
     };
 
     this.runDemo = this.runDemo.bind(this);
   }
-
-  // componentDidMount() {
-  //   this.props.signup(this.demoUser);
-  // }
 
   runDemo() {
     this.props.login(this.demoUser);
   }
 
   render() {
-    const { currentUser, logout } = this.props;
+    const { currentUser, logout, history } = this.props;
 
     let display = (currentUser) ? 
       <div>
@@ -33,20 +27,25 @@ class NavBar extends React.Component {
         <button onClick={logout}>Log Out</button>
       </div>
       :
-      <div>
-        <Link to="/signup">Sign Up</Link>
-        <Link to="/login">Log In</Link>
-        <button onClick={this.runDemo}>Demo</button>
+      <div id='nav-bar-buttons'>
+        <button id='login-button' onClick={() => history.push('/login')}>Log In</button>
+        <button id='signup-button' onClick={() => history.push('/signup')}>Sign Up</button>
+        <button id='demo-button' onClick={this.runDemo}>Demo</button>
       </div>;
     
     return(
-      <header>
-        <h1>YEP YELP</h1>
+      <header id='nav-bar-container'>
+        <div id='nav-bar-logo'>
+          <ion-icon name="fish"></ion-icon>
+          <img id='fish-icon' src={fishIcon} alt="fishicon" />
+          <h2>YEPYELP</h2>
+        </div>
 
         {display}
+
       </header>
     )
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
