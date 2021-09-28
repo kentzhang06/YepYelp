@@ -99,7 +99,7 @@ class SessionForm extends React.Component {
           <ul>{displayErrors}</ul>
         </div>
 
-        <img id="signup-login-pic" src={window.signupNarutoURL} alt="signupPic" />
+        <img id="signup-login-pic" src={window.signupNarutoUrl} alt="signupPic" />
       </div>
     )
   }

@@ -21,7 +21,7 @@ class Home extends React.Component {
             <h2>YEPYELP</h2>
           </div>
           <SearchBar />
-          <img id="naruto-home" src={window.narutoRamenURL} alt="naruto" />
+          <img id="naruto-home" src={window.narutoRamenUrl} alt="naruto" />
         </div>
       </div>
     )
