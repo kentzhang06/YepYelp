@@ -14,6 +14,18 @@
   </head>
 
   <body>
+    <script type="text/javascript">
+      window.fishUrl = "<%= image_url('fish.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.narutoRamenUrl = "<%= image_url('naruto-ramen.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.signupNarutoUrl = "<%= image_url('signup_login_pic.png') %>";
+    </script>
+    <script type="text/javascript">
+      window.errorHeadbandUrl = "<%= image_url('error_headband.png') %>";
+    </script>
     <%= yield %>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

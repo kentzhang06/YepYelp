@@ -27,6 +27,8 @@ class SessionForm extends React.Component {
   runDemo(e) {
     e.preventDefault();
     this.setState(this.demoUser);
+    this.props.processForm(this.demoUser)
+      .then(() => this.props.history.push('/'));
   }
 
   handleSubmit(e) {
@@ -54,9 +56,9 @@ class SessionForm extends React.Component {
       <div></div>;
 
     let formHeader = (formType === "Log in") ?
-      <h2>Log in to YepYelp</h2>
+      <Link to='/'>Log in to YepYelp</Link>
       :
-      <h2>Sign up for YepYelp</h2>;
+      <Link to='/'>Sign up for YepYelp</Link>
     
     let formLink = (formType === "Log in") ?
       <div className="form-footer">
@@ -86,7 +88,7 @@ class SessionForm extends React.Component {
         <SignupLoginBanner />
         
         <div className="form-container">
-          {formHeader}<br />
+          {formHeader}<br/><br/>
           <form id="form" onSubmit={this.handleSubmit}>
             {nameDisplay}
             <input type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
@@ -99,7 +101,7 @@ class SessionForm extends React.Component {
           <ul>{displayErrors}</ul>
         </div>
 
-        <img id="signup-login-pic" src={signupPic} alt="signupPic" />
+        <img id="signup-login-pic" src={window.signupNarutoUrl} alt="signupPic" />
       </div>
     )
   }

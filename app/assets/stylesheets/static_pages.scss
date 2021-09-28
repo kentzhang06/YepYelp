@@ -5,6 +5,22 @@ body {
   background-color: #fad6a5;
 }
 
+// ERROR PAGE
+.error-page {
+  position: fixed;
+  top: 15%;
+  left: 5%;
+  font-family: 'Headland One', serif;
+  font-size: 30px;
+  text-align: center;
+
+  img {
+    width: 350px;
+    height: auto;
+    padding-top: 20px;
+  }
+}
+
 // NAV BAR CONTAINER
 #nav-bar-container {
   display: flex;
@@ -87,6 +103,7 @@ body {
     width: 250px;
     height: 40px;
     border: none;
+    font-size: 14px;
   }
   button {
     width: 50px;
@@ -112,7 +129,6 @@ body {
   background-color: white;
   font-weight: bold;
   cursor: default;
-
 }
 
 // SIGNUP LOGIN BANNER
@@ -129,22 +145,16 @@ body {
   }
 }
 
-// SIGNUP LOGIN FORM CONTAINER
-
-// .signup-login-form-container{
-//   display: flex;
-//   justify-content: space-evenly;
-
-// }
-
 .form-container {
   position: fixed;
   top: 30%;
   left: 20%;
   margin: 20px;
   width: 25%;
+  text-align: center;
 
-  h2 {
+  a {
+    text-decoration: none;
     font-family: 'Headland One', serif;
     color: #E07B00;
     text-align: center;
@@ -175,6 +185,7 @@ body {
 
   button {
     margin: 4px;
+    font-family: 'Headland One', serif;
     background-color: #E07B00;
     color: white;
     padding: 10px;
@@ -189,6 +200,7 @@ body {
   justify-content: right;
   font-size: 12px;
   padding-top: 5px;
+  font-family: 'Headland One', serif;
 
   p {
     color: #999;
