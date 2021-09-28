@@ -125,9 +125,18 @@ body {
 
 // SIGNUP LOGIN FORM CONTAINER
 
+// .signup-login-form-container{
+//   display: flex;
+//   justify-content: space-evenly;
+
+// }
+
 .form-container {
+  position: fixed;
+  top: 30%;
+  left: 20%;
   margin: 20px;
-  width: 50%;
+  width: 25%;
 
   h2 {
     font-family: 'Headland One', serif;
@@ -169,6 +178,16 @@ body {
   }
 }
 
+// #demo-button {
+//   margin: 4px;
+//   background-color: #E07B00;
+//   color: white;
+//   padding: 10px;
+//   font-size: 14px;
+//   border-radius: 3px;
+//   border: none;
+// }
+
 .form-footer {
   display: flex;
   justify-content: right;
@@ -184,4 +203,14 @@ body {
     color: #0073bb;
     text-decoration: none;
   }
+}
+
+// SIGN UP - LOG IN IMAGE
+#signup-login-pic {
+  width: 400px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(0%, -50%);
 }

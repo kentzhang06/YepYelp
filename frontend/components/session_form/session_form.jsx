@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SignupLoginBanner from "./signup_login_banner";
+import signupPic from '../../../app/assets/images/signup_login_pic.png';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -13,7 +14,19 @@ class SessionForm extends React.Component {
       zipCode: ""
     };
 
+    this.demoUser = {
+      email: "example@d.com",
+      password: "demopass"
+    };
+
+    this.runDemo = this.runDemo.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  runDemo(e) {
+    e.preventDefault();
+    this.props.login(this.demoUser);
   }
 
   handleSubmit(e) {
@@ -35,6 +48,11 @@ class SessionForm extends React.Component {
     const { formType, errors } = this.props;
     let displayErrors = (errors) ? (errors.map((err, i) => <li key={i}>{err}</li>) ) : <div></div>;
     
+    let demoButton = (formType === "Log in") ?
+      <button id='demo-button' onClick={(e) => this.runDemo(e)}>Demo</button>
+      :
+      <div></div>;
+
     let formHeader = (formType === "Log in") ?
       <h2>Log in to YepYelp</h2>
       :
@@ -51,14 +69,14 @@ class SessionForm extends React.Component {
         <Link to="/login">Log in</Link>
       </div>;
     
-    let nameDisplay = (formType === "Signup") ?
+    let nameDisplay = (formType === "Sign Up") ?
       <div className="form-name-input">
         <input type="text" placeholder="First Name" value={this.state.firstName} onChange={this.update('firstName')} />
         <input type="text" placeholder="Last Name" value={this.state.lastName} onChange={this.update('lastName')} />
       </div>
       : <div> </div>;
 
-    let zipDisplay = (formType === "Signup") ?
+    let zipDisplay = (formType === "Sign Up") ?
       <input type="text" placeholder="ZIP Code" value={this.state.zipCode} onChange={this.update('zipCode')} />
 
       : <div> </div>;
@@ -66,6 +84,7 @@ class SessionForm extends React.Component {
     return(
       <div>
         <SignupLoginBanner />
+        
         <div className="form-container">
           {formHeader}<br />
           <form id="form" onSubmit={this.handleSubmit}>
@@ -77,8 +96,10 @@ class SessionForm extends React.Component {
           </form>
           {formLink}
           <ul>{displayErrors}</ul>
-
+          {demoButton}
         </div>
+
+        <img id="signup-login-pic" src={signupPic} alt="signupPic" />
       </div>
     )
   }

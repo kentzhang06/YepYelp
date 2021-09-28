@@ -6,17 +6,17 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
 
-    this.demoUser = {
-      email: "example@d.com",
-      password: "demopass"
-    };
+    // this.demoUser = {
+    //   email: "example@d.com",
+    //   password: "demopass"
+    // };
 
-    this.runDemo = this.runDemo.bind(this);
+    // this.runDemo = this.runDemo.bind(this);
   }
 
-  runDemo() {
-    this.props.login(this.demoUser);
-  }
+  // runDemo() {
+  //   this.props.login(this.demoUser);
+  // }
 
   render() {
     const { currentUser, logout, history } = this.props;
@@ -30,7 +30,7 @@ class NavBar extends React.Component {
       <div id='nav-bar-buttons'>
         <button id='login-button' onClick={() => history.push('/login')}>Log In</button>
         <button id='signup-button' onClick={() => history.push('/signup')}>Sign Up</button>
-        <button id='demo-button' onClick={this.runDemo}>Demo</button>
+        {/* <button id='demo-button' onClick={this.runDemo}>Demo</button> */}
       </div>;
     
     return(
