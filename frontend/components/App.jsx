@@ -9,7 +9,6 @@ import Home from "./home/home";
 const App = () => (
   <div>
     <header>
-      <NavBarContainer />
     </header>
 
     <Switch>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SignupLoginBanner from "./signup_login_banner";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -33,7 +34,22 @@ class SessionForm extends React.Component {
   render() {
     const { formType, errors } = this.props;
     let displayErrors = (errors) ? (errors.map((err, i) => <li key={i}>{err}</li>) ) : <div></div>;
-    let formLink = (formType === "Login") ? (<Link to="/signup">Sign Up</Link>) : (<Link to="/login">Login</Link>);
+    
+    let formHeader = (formType === "Log in") ?
+      <h2>Log in to YepYelp</h2>
+      :
+      <h2>Sign up for YepYelp</h2>;
+    
+    let formLink = (formType === "Log in") ?
+      <div className="form-footer">
+        <p>New to YepYelp?</p>
+        <Link to="/signup">Sign up</Link>
+      </div>
+      :
+      <div className="form-footer">
+        <p>Already on YepYelp?</p>
+        <Link to="/login">Log in</Link>
+      </div>;
     
     let nameDisplay = (formType === "Signup") ?
       <div className="form-name-input">
@@ -48,18 +64,21 @@ class SessionForm extends React.Component {
       : <div> </div>;
 
     return(
-      <div className="form-container">
-        <h2>{formType} for YepYelp</h2>
-        <form id="form" onSubmit={this.handleSubmit}>
-          {nameDisplay}
-          <input type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
-          <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
-          {zipDisplay}
-          <button>{formType}</button>
-        </form>
-        {formLink}
-        <ul>{displayErrors}</ul>
+      <div>
+        <SignupLoginBanner />
+        <div className="form-container">
+          {formHeader}<br />
+          <form id="form" onSubmit={this.handleSubmit}>
+            {nameDisplay}
+            <input type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
+            <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
+            {zipDisplay}
+            <button>{formType}</button>
+          </form>
+          {formLink}
+          <ul>{displayErrors}</ul>
 
+        </div>
       </div>
     )
   }

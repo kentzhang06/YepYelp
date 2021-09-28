@@ -35,12 +35,10 @@ class NavBar extends React.Component {
     
     return(
       <header id='nav-bar-container'>
-        <div id='nav-bar-logo'>
-          <ion-icon name="fish"></ion-icon>
-          <img id='fish-icon' src={fishIcon} alt="fishicon" />
-          <h2>YEPYELP</h2>
+        <div id='nav-bar-left-buttons'>
+          <button id='review-button'>Write a Review</button>
+          <button id='business-button'>Businesses</button>
         </div>
-
         {display}
 
       </header>
