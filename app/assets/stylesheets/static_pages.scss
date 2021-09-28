@@ -54,9 +54,15 @@ body {
 }
 
 #home-logo {
+  position: fixed;
+  bottom: 98%;
+  right: 34%;
+  width: 200px;
+  text-decoration: none;
   font-size: 40px;
   font-family: 'Headland One', serif;
   text-align: center;
+  color: black;
 }
 
 #home-main {
