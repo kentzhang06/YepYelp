@@ -17,11 +17,11 @@ class Home extends React.Component {
         <div id='home-main'>
           <div id='home-logo'>
             <ion-icon name="fish"></ion-icon>
-            <img id='fish-icon' src={fishIcon} alt="fishicon" />
+            <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
             <h2>YEPYELP</h2>
           </div>
           <SearchBar />
-          <img id="naruto-home" src={naruto} alt="naruto" />
+          <img id="naruto-home" src={window.narutoRamenURL} alt="naruto" />
         </div>
       </div>
     )

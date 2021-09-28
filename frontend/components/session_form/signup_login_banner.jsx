@@ -15,7 +15,7 @@ class SignupLoginBanner extends React.Component {
       <header id='signup-login-banner'>
         <div id='nav-bar-logo' onClick={() => history.push('/')}>
           <ion-icon name="fish"></ion-icon>
-          <img id='fish-icon' src={fishIcon} alt="fishicon" />
+          <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
           <h2>YEPYELP</h2>
         </div>
       </header>
