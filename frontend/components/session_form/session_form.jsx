@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
 
   runDemo(e) {
     e.preventDefault();
-    this.props.login(this.demoUser);
+    this.setState(this.demoUser);
   }
 
   handleSubmit(e) {
@@ -93,10 +93,10 @@ class SessionForm extends React.Component {
             <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
             {zipDisplay}
             <button>{formType}</button>
+            {demoButton}  
           </form>
           {formLink}
           <ul>{displayErrors}</ul>
-          {demoButton}
         </div>
 
         <img id="signup-login-pic" src={signupPic} alt="signupPic" />
