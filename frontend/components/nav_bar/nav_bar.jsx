@@ -37,7 +37,7 @@ class NavBar extends React.Component {
       <header id='nav-bar-container'>
         <div id='nav-bar-left-buttons'>
           <button id='review-button'>Write a Review</button>
-          <button id='business-button'>Businesses</button>
+          <button id='business-button' onClick={() => history.push('/businesses')}>Businesses</button>
         </div>
         {display}
 
