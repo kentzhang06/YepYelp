@@ -1,6 +1,8 @@
 import React from "react";
 import BusinessIndexItem from "./business_index_item";
 import SearchBar from "../search_bar/search_bar";
+import { Link } from "react-router-dom";
+import NavSearchBar from "../nav_search_bar/nav_search_bar";
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class BusinessIndex extends React.Component {
   }
 
   render() {
-    const { businesses } = this.props;
+    const { businesses, history } = this.props;
 
     let displayBusinesses = businesses.map((business, i) => {
       return (
@@ -22,10 +24,18 @@ class BusinessIndex extends React.Component {
 
     return(
       <div>
-        <SearchBar />
-        <ul>
-          { displayBusinesses }
-        </ul>
+        <NavSearchBar />
+        <div className='business-main'>
+          <div id='filter-side-bar'>
+            Filters
+          </div>
+          <ul>
+            { displayBusinesses }
+          </ul>
+          <div id='map'>
+            Map
+          </div>
+        </div>
       </div>
     )
   }

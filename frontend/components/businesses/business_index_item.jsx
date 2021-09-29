@@ -2,7 +2,7 @@ import React from 'react';
 
 const BusinessIndexItem = ({ business, index }) => {
   return (
-    <li>
+    <li className='single-business-item'>
       { index } <br />
       Name: {business.name} <br />
       Address: {business.address} <br />
