@@ -268,8 +268,19 @@ button {
 // BUSINESS-ITEM
 
 .single-business-item {
-  width: 500px;
+  display: flex;
+  align-items: center;
+
+  width: 700px;
   height: 300px;
-  background-color: yellow;
   margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+.business-preview-image {
+  width: 280px;
+  height: 280px;
+  background-color: black;
+  margin-inline: 10px;
+  
 }

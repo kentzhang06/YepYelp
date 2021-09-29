@@ -7,6 +7,11 @@ import NavSearchBar from "../nav_search_bar/nav_search_bar";
 class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
+
+    this.imgs = [window.sushiUrl, boneMarrowRamenUrl, window.curryUrl, window.akiraUrl,
+      window.izakayaUrl, window.uniurl, window.grilledFishUrl, window.hotateUrl, window.okoUrl
+    ];
+
   }
 
   componentDidMount() {
@@ -18,7 +23,7 @@ class BusinessIndex extends React.Component {
 
     let displayBusinesses = businesses.map((business, i) => {
       return (
-        <BusinessIndexItem index={i+1} key={business.id} business={business}/>
+        <BusinessIndexItem index={i+1} img={this.imgs[i]} key={business.id} business={business}/>
       )
     });
 
