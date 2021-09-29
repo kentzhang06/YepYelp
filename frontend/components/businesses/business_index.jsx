@@ -9,7 +9,7 @@ class BusinessIndex extends React.Component {
     super(props);
 
     this.imgs = [window.sushiUrl, boneMarrowRamenUrl, window.curryUrl, window.akiraUrl,
-      window.izakayaUrl, window.uniurl, window.grilledFishUrl, window.hotateUrl, window.okoUrl
+      window.izakayaUrl, window.uniUrl, window.grilledFishUrl, window.hotateUrl, window.okoUrl
     ];
 
   }
