@@ -14,3 +14,87 @@ demo_user = User.create(
   last_name: "Uchiha",
   zip_code: "99999"
 )
+
+u1 = User.create(
+  email: "itachi@ninja.com", 
+  password: "brother", 
+  first_name: "Itachi", 
+  last_name: "Uchiha",
+  zip_code: "99999"
+)
+
+u2 = User.create(
+  email: "kakashi@ninja.com", 
+  password: "sharingan", 
+  first_name: "Kakashi", 
+  last_name: "Uchiha",
+  zip_code: "99933"
+)
+
+u3 = User.create(
+  email: "naruto@ninja.com", 
+  password: "ninetail", 
+  first_name: "Naruto", 
+  last_name: "Uchiha",
+  zip_code: "69999"
+)
+
+b1 = Business.create(
+  name: 'The Rack',
+  address: '123 Rock St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '90000',
+  url: 'rack.com',
+  owner_id: 3
+)
+
+b2 = Business.create(
+  name: 'Kunai',
+  address: '99 Post St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '90033',
+  url: 'ninja.com',
+  owner_id: 3
+)
+
+b3 = Business.create(
+  name: 'Fallen Leaves',
+  address: '123 California St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '94000',
+  url: 'leaves.com',
+  owner_id: 1
+)
+
+b4 = Business.create(
+  name: 'Shurikens',
+  address: '123 Sakura St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '90070',
+  url: 'pink99.com',
+  owner_id: 3
+)
+
+b5 = Business.create(
+  name: 'The Home Ground',
+  address: '123 Grass St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '90300',
+  url: 'ground.com',
+  owner_id: 2
+)
+
+b6 = Business.create(
+  name: 'The Chunin Exam',
+  address: '99 Home St.',
+  city: 'San Francisco',
+  state: 'CA',
+  zip_code: '90500',
+  url: 'rocklee.com',
+  owner_id: 2
+)

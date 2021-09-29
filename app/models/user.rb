@@ -6,6 +6,9 @@ class User < ApplicationRecord
   validates_uniqueness_of :email, :session_token
   validates :password, length: {minimum: 6}, allow_nil: true
 
+  has_many :businesses,
+    class_name: 'Business'
+
   after_initialize :ensure_session_token
 
   # Class method for finding a user ONLY if we have the correct email and password
