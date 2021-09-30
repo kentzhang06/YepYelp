@@ -3,5 +3,8 @@ json.zipCode business.zip_code
 json.ownerId business.owner_id
 json.priceRange business.price_range
 json.openingHours business.opening_hours
-json.imgUrl url_for(business.photo)
+json.imgUrls business.photos do |photo|
+  json.url url_for(photo)
+end
+
 

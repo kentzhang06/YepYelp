@@ -98,5 +98,6 @@ b6 = Business.create(
   owner_id: 2
 )
 
-b2.photo.attach(io: File.open("../images/akira.jpg"), filename: "akira.jpg")
+b2.photos.attach(io: File.open("../images/akira.jpg"), filename: "akira.jpg")
+b2.photos.attach(io: File.open("../images/curry.jpg"), filename: "curry.jpg")
 b2.save!

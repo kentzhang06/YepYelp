@@ -6,11 +6,11 @@ class Business < ApplicationRecord
   belongs_to :owner,
     class_name: 'User'
 
-  has_one_attached :photo
+  has_many_attached :photos
 
   def ensure_photo
-    unless self.photo.attached?
-      errors[:busienss] << "Must be attached"
+    unless self.photos.attached?
+      errors[:business] << "Must be attached"
     end
   end
 end

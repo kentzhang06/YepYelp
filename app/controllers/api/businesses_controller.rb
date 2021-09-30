@@ -2,12 +2,12 @@ class Api::BusinessesController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
-    @businesses = Business.all
+    @businesses = Business.with_attached_photos.all
     render :index
   end
 
   def show
-    @business = Business.find_by(id: params[:id])
+    @business = Business.with_attached_photos.find_by(id: params[:id])
     render :show
   end
 
@@ -23,6 +23,6 @@ class Api::BusinessesController < ApplicationController
 
   private
   def business_params
-    params.require(:business).permit(:name, :address, :city, :state, :zip_code, :url, :photo)
+    params.require(:business).permit(:name, :address, :city, :state, :zip_code, :url, photos: [])
   end
 end
