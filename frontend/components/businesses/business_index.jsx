@@ -8,10 +8,6 @@ class BusinessIndex extends React.Component {
   constructor(props) {
     super(props);
 
-    this.imgs = [window.sushiUrl, boneMarrowRamenUrl, window.curryUrl, window.akiraUrl,
-      window.izakayaUrl, window.uniUrl, window.grilledFishUrl, window.hotateUrl, window.okoUrl
-    ];
-
   }
 
   componentDidMount() {
@@ -29,12 +25,16 @@ class BusinessIndex extends React.Component {
 
     return(
       <div>
-        <NavSearchBar />
+        <div className="sticky-search-nav">
+          <NavSearchBar />
+        </div>
         <div className='business-main'>
           <div id='filter-side-bar'>
             Filters
           </div>
           <ul>
+            <h1>The Best 10 Restaurants near San Francisco, 94112</h1>
+            <h2>All Results </h2>
             { displayBusinesses }
           </ul>
           <div id='map'>

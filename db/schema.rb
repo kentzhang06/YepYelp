@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_29_214824) do
+ActiveRecord::Schema.define(version: 2021_09_30_174322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2021_09_29_214824) do
     t.string "url", null: false
     t.string "phone"
     t.integer "owner_id", null: false
-    t.string "price_range"
+    t.integer "price_range"
     t.string "opening_hours"
     t.float "lat"
     t.float "long"

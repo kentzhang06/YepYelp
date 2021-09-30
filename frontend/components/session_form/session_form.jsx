@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
     };
 
     this.demoUser = {
-      email: "example@d.com",
+      email: "sasuke@ninja.com",
       password: "demopass"
     };
 

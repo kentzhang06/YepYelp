@@ -1,0 +1,80 @@
+// BUSINESS-CONTENT
+.business-main {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 20px;
+
+  h1 {
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+
+  h2 {
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    padding-bottom: 10px;
+  }
+}
+
+.single-business-item:hover {
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  transition: box-shadow .3s;
+}
+
+// BUSINESS-ITEM
+
+.single-business-item {
+  display: flex;
+
+  width: 650px;
+  height: 220px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 1px solid #E07B00;
+  padding: 24px;
+  border-radius: 4px;
+}
+
+
+.business-preview-image {
+  width: 220px;
+  height:220px;
+  object-fit: cover;
+  background-color: black;
+  border-radius: 4px;
+}
+
+.business-item-content {
+  margin-left: 25px;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+
+  t {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+// STICKY SERACH-NAV
+.sticky-search-nav {
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+}
+
+// MAP
+#map {
+  width: 400px;
+  height: 400px;
+  background-color: yellowgreen;
+}
+
+// FILTER BAR
+#filter-side-bar {
+  width: 300px;
+  height: 800px;
+  background-color: white;
+}

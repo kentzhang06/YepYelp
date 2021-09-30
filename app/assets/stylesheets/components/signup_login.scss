@@ -1,0 +1,92 @@
+// SIGNUP LOGIN BANNER
+
+#signup-login-banner {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #E07B00;
+
+}
+
+#nav-bar-logo {
+  font-family: 'Headland One', serif;
+  font-weight: bold;
+}
+
+.form-container {
+  position: fixed;
+  top: 30%;
+  left: 20%;
+  margin: 20px;
+  width: 25%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    font-family: 'Headland One', serif;
+    color: #E07B00;
+    text-align: center;
+  }
+}
+
+#signup-login-banner {
+  text-align: center;
+}
+
+.form-name-input {
+  display: flex;
+}
+
+.form-name-input input {
+  width: 50%;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  input {
+    height: 20px;
+    margin: 4px;
+    border-radius: 3px;
+    border: 1px solid #999;
+  }
+
+  button {
+    margin: 4px;
+    font-family: 'Headland One', serif;
+    background-color: #E07B00;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+    border: none;
+  }
+}
+
+.form-footer {
+  display: flex;
+  justify-content: right;
+  font-size: 12px;
+  padding-top: 5px;
+  font-family: 'Headland One', serif;
+
+  p {
+    color: #999;
+    padding-right: 5px;
+  }
+
+  a {
+    color: #0073bb;
+    text-decoration: none;
+  }
+}
+
+// SIGN UP - LOG IN IMAGE
+#signup-login-pic {
+  width: 400px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(0%, -50%);
+}
