@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 demo_user = User.create(
   email: "example@d.com", 
   password: "demopass", 
@@ -98,3 +97,6 @@ b6 = Business.create(
   url: 'rocklee.com',
   owner_id: 2
 )
+
+b2.photo.attach(io: File.open("../images/akira.jpg"), filename: "akira.jpg")
+b2.save!

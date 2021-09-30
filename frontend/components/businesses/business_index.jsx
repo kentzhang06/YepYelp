@@ -23,7 +23,7 @@ class BusinessIndex extends React.Component {
 
     let displayBusinesses = businesses.map((business, i) => {
       return (
-        <BusinessIndexItem index={i+1} img={this.imgs[i]} key={business.id} business={business}/>
+        <BusinessIndexItem index={i+1} key={business.id} business={business}/>
       )
     });
 
