@@ -1,3 +1,4 @@
+
 .business-image-background {
   position: relative;
   text-align: center;
@@ -5,23 +6,100 @@
   width: 100vw;
   height: 426px;
   margin-top: 30px;
-  background-color: white;
-  z-index: 0;
 
   img {
     width: 20%;
-    height: 100%;
+    height: 98%;
+    opacity: 0.85;
     object-fit: cover;
   }
 
   .business-title {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 75%;
+    left: 31%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
-    font-weight: 900px;
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    font-weight: 700px;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word;
+    line-height: 56px;
     color: white;
-    z-index: 5;
+    letter-spacing: -0.4px;
+    text-align: left;
+    p {
+      font-size: 16px;
+    }
   }
 }
+
+#business-review-button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  letter-spacing: -0.2px;
+  border-radius: 4px;
+  font-weight:normal;
+  background-color: #E07B00;
+  color: white;
+  text-align: center;
+  font-family: 'Headland One', serif;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  border: none;
+
+  ion-icon {
+    font-size: 20px;
+    margin-right: 5px;
+  }
+
+}
+
+.business-content {
+  display: flex;
+  justify-content: center;
+}
+
+#business-review-button:hover {
+  background-color: #bd6c09;
+}
+
+#business-main-content {
+  display: flex;
+  flex-direction: column;
+  width: 760px;
+  border: 1px solid black;
+}
+
+#business-info-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 365px;
+  height: 270px;
+  border: 1px solid black;
+  margin: 15px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #999;
+    font-size: 14px;
+    color: rgba(0,131,143,1);
+    padding-bottom: 15px;
+    font-weight: 600;
+    margin-inline: 10px;
+    font-family: 'Headland One', serif;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+

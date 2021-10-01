@@ -19,7 +19,10 @@ class BusinessShow extends React.Component {
 
     let display = (business) ?
       <div className="business-title">
-        { business.name }
+        { business.name } <br />
+        <p>
+          Hours: { business.openingHours }
+        </p>
       </div>
       : <div></div>;
 
@@ -32,6 +35,20 @@ class BusinessShow extends React.Component {
         }
       })
       : <div></div>;
+    
+    let businessInfo = (business) ?
+      <div id="business-info-right">
+        <div id="business-url">
+          { business.url } <img src={window.redirectUrl} alt="" />
+        </div>
+        <div id="business-phone">
+          { business.phone } <img src={window.phoneUrl} alt="" />
+        </div>
+        <div id="business-address">
+          { business.address}, { business.city}, { business.state }, { business.zipCode } <img src={window.directionUrl} alt="" />
+        </div>
+      </div>
+      : <div></div>;
 
     return(
       <div>
@@ -39,6 +56,14 @@ class BusinessShow extends React.Component {
         <div className="business-image-background">
           { imageBackground }
           { display }
+        </div>
+        <div className="business-content">
+          <div id="business-main-content">
+            <div id="business-buttons">
+              <button id="business-review-button"><ion-icon name="star-outline"></ion-icon>   Write a Review</button>
+            </div>
+          </div>
+          {businessInfo}
         </div>
       </div>
     )
