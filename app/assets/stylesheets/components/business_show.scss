@@ -1,0 +1,27 @@
+.business-image-background {
+  position: relative;
+  text-align: center;
+  display: flex;
+  width: 100vw;
+  height: 426px;
+  margin-top: 30px;
+  background-color: white;
+  z-index: 0;
+
+  img {
+    width: 20%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .business-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 900px;
+    color: white;
+    z-index: 5;
+  }
+}

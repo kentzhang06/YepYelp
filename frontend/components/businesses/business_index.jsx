@@ -1,8 +1,6 @@
 import React from "react";
 import BusinessIndexItem from "./business_index_item";
-import SearchBar from "../search_bar/search_bar";
-import { Link } from "react-router-dom";
-import NavSearchBar from "../nav_search_bar/nav_search_bar";
+import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -26,7 +24,7 @@ class BusinessIndex extends React.Component {
     return(
       <div>
         <div className="sticky-search-nav">
-          <NavSearchBar />
+          <NavSearchBarContainer />
         </div>
         <div className='business-main'>
           <div id='filter-side-bar'>

@@ -30,7 +30,6 @@ class NavBar extends React.Component {
       <div id='nav-bar-buttons'>
         <button id='login-button' onClick={() => history.push('/login')}>Log In</button>
         <button id='signup-button' onClick={() => history.push('/signup')}>Sign Up</button>
-        {/* <button id='demo-button' onClick={this.runDemo}>Demo</button> */}
       </div>;
     
     return(

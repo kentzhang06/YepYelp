@@ -7,6 +7,7 @@ import NavBarContainer from "./nav_bar/nav_bar_container";
 import Home from "./home/home";
 import ErrorPage from "./error/error";
 import BusinessIndexContainer from "./businesses/business_index_container";
+import BusinessShowContainer from "./businesses/business_show_container";
 
 const App = () => (
   <div>
@@ -17,6 +18,7 @@ const App = () => (
       <Route exact path="/" component={Home} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
       <Route path="/businesses" component={BusinessIndexContainer} />
       <Route component={ErrorPage}/>
 

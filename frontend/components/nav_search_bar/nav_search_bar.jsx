@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SearchBar from "../search_bar/search_bar";
 import { withRouter } from "react-router";
 
@@ -9,7 +8,15 @@ class NavSearchBar extends React.Component {
   }
 
   render() {
-    const { history } = this.props;
+    const { history, currentUser } = this.props;
+
+    const displayLogin = (!currentUser) ?
+        <button id='login-button' onClick={() => history.push('/login')}>Log In</button>
+    : <div></div>;
+    const displaySignup = (!currentUser) ?
+      <button id='signup-button' onClick={() => history.push('/signup')}>Sign Up</button>
+    : <div></div>;
+    
 
     return(
       <div className='nav-search-bar'>
@@ -20,6 +27,8 @@ class NavSearchBar extends React.Component {
         </div>
         <SearchBar />
         <button id="write-review-button">Write a Review</button>
+        {displayLogin}
+        {displaySignup}
       </div>
     )
   }
