@@ -45,7 +45,7 @@ class BusinessShow extends React.Component {
           { business.phone } <img src={window.phoneUrl} alt="" />
         </div>
         <div id="business-address">
-          { business.address}, { business.city}, { business.state }, { business.zipCode } <img src={window.directionUrl} alt="" />
+          { business.address} { business.city}, { business.state }, { business.zipCode } <img src={window.directionUrl} alt="" />
         </div>
       </div>
       : <div></div>;
