@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Business.destroy_all
+User.destroy_all
+
 require 'open-uri'
 
 demo_user = User.create(
@@ -83,7 +86,7 @@ b1 = Business.create(
   opening_hours: '9:30 AM - 11:00 PM',
   lat: 37.7795,
   long: -122.5016,
-  owner_id: 2
+  owner_id: u2.id
 )
 
 b2 = Business.create(
@@ -98,7 +101,7 @@ b2 = Business.create(
   opening_hours: '10:30 AM - 10:00 PM',
   lat: 37.7367,
   long: -122.3854,
-  owner_id: 2
+  owner_id: u2.id
 )
 
 b3 = Business.create(
@@ -113,7 +116,7 @@ b3 = Business.create(
   opening_hours: '4:30 PM - 11:00 PM',
   lat: 37.7537,
   long: -122.4376,
-  owner_id: 3
+  owner_id: u3.id
 )
 
 b4 = Business.create(
@@ -128,7 +131,7 @@ b4 = Business.create(
   opening_hours: '5:30 AM - 7:00 PM',
   lat: 37.7490,
   long: -122.4923,
-  owner_id: 4
+  owner_id: u4.id
 )
 
 b5 = Business.create(
@@ -143,7 +146,7 @@ b5 = Business.create(
   opening_hours: '11:30 AM - 11:30 PM',
   lat: 37.7208,
   long: -122.4456,
-  owner_id: 5
+  owner_id: u5.id
 )
 
 b6 = Business.create(
@@ -158,7 +161,7 @@ b6 = Business.create(
   opening_hours: '5:30 PM - 10:00 PM',
   lat: 37.7309,
   long: -122.4843,
-  owner_id: 6
+  owner_id: u6.id
 )
 
 b7 = Business.create(
@@ -173,7 +176,7 @@ b7 = Business.create(
   opening_hours: '2:30 PM - 10:00 PM',
   lat: 37.7587,
   long: -122.4302,
-  owner_id: 7
+  owner_id: u7.id
 )
 
 b8 = Business.create(
@@ -188,7 +191,7 @@ b8 = Business.create(
   opening_hours: '11:30 AM - 8:00 PM',
   lat: 37.7727,
   long: -122.3915,
-  owner_id: 5
+  owner_id: u5.id
 )
 
 b9 = Business.create(
@@ -203,7 +206,7 @@ b9 = Business.create(
   opening_hours: '5:30 AM - 11:00 PM',
   lat: 37.7369,
   long: -122.4326,
-  owner_id: 1
+  owner_id: u1.id
 )
 
 b10 = Business.create(
@@ -218,7 +221,7 @@ b10 = Business.create(
   opening_hours: '6:30 PM - 2:00 AM',
   lat: 37.7058,
   long: -122.4550,
-  owner_id: 2
+  owner_id: u2.id
 )
 
 f1 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/bbq/bbq1.jpg')
