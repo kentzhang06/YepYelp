@@ -57,12 +57,38 @@ class BusinessShow extends React.Component {
 
           <a target="_blank" href={`https://www.google.com/maps/dir//${business.lat},${business.long}`}>Get Directions</a>
 
-          <p>
+          <span id="address-string">
             { business.address} { business.city}, { business.state }, { business.zipCode } <img src={window.directionUrl} alt="" />
-          </p>
+          </span>
         </div>
       </div>
       : <div></div>;
+    
+    let hoursTable = (business) ?
+      <div id="hours-table">
+        <div className="day-row">
+          <div className="specific-day">Mon</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Tues</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Wed</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Thu</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Fri</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Sat</div><div>{business.openingHours}</div>
+        </div>
+        <div className="day-row">
+          <div className="specific-day">Sun</div><div>{business.openingHours}</div>
+        </div>
+      </div>
+      :<div></div>
 
     return(
       <div>
@@ -75,6 +101,14 @@ class BusinessShow extends React.Component {
           <div id="business-main-content">
             <div id="business-buttons">
               <button id="business-review-button"><ion-icon name="star-outline"></ion-icon>   Write a Review</button>
+            </div>
+            <div id="loc-hours-content">
+              <div id="loc-map">
+                MAP
+              </div>
+        
+              {hoursTable}
+
             </div>
             <div className="review-container">
               REVIEW 1
