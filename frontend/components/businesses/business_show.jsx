@@ -1,5 +1,6 @@
 import React from "react";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
+import { withRouter } from "react-router";
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -12,12 +13,12 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    const { business } = this.props;
+    const { business, history } = this.props;
 
     let display = (business) ?
       <div className="business-title">
         { business.name } <br />
-        <p>
+        <div id="info-under-title">
           <b>
             <div id="claimed-section">
               <ion-icon name="checkmark-circle-outline"></ion-icon>
@@ -31,7 +32,7 @@ class BusinessShow extends React.Component {
           <p>
             Hours: { business.openingHours }
           </p>
-        </p>
+        </div>
       </div>
       : <div></div>;
 
@@ -88,7 +89,14 @@ class BusinessShow extends React.Component {
           <div className="specific-day">Sun</div><div>{business.openingHours}</div>
         </div>
       </div>
-      :<div></div>
+      :<div></div>;
+
+    let photosButton = (business) ?
+      <button id="photo-button"
+        onClick={() => history.push(`/biz_photos/${business.id}`)}
+        >View All Photos
+      </button>
+      : <div></div>;
 
     return(
       <div>
@@ -96,6 +104,7 @@ class BusinessShow extends React.Component {
         <div className="business-image-background">
           { imageBackground }
           { display }
+          { photosButton }
         </div>
         <div className="business-content">
           <div id="business-main-content">
@@ -121,4 +130,4 @@ class BusinessShow extends React.Component {
   }
 }
 
-export default BusinessShow;
+export default withRouter(BusinessShow);

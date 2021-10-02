@@ -8,6 +8,8 @@ import Home from "./home/home";
 import ErrorPage from "./error/error";
 import BusinessIndexContainer from "./businesses/business_index_container";
 import BusinessShowContainer from "./businesses/business_show_container";
+import Gallery from "./image_gallery/gallery";
+import GalleryContainer from "./image_gallery/gallery_container";
 
 const App = () => (
   <div>
@@ -20,6 +22,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupFormContainer} />
       <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
       <Route path="/businesses" component={BusinessIndexContainer} />
+      <Route exact path="/biz_photos/:businessId" component={GalleryContainer} />
       <Route component={ErrorPage}/>
 
     </Switch>

@@ -8,7 +8,7 @@ class BusinessIndexItem extends React.Component {
 
 
   render () {
-    const {business, index} = this.props
+    const {business, index, history} = this.props
     const randomIndex = Math.floor(Math.random() * business.images.length);
     const photo = (business.images) ?
       <img className={'business-preview-image'} src={business.images[randomIndex].url} alt="" /> 
@@ -16,7 +16,7 @@ class BusinessIndexItem extends React.Component {
       <div></div>; 
 
     return (
-      <li className='single-business-item' onClick={() => this.props.history.push(`/businesses/${business.id}`)}>
+      <li className='single-business-item' onClick={() => history.push(`/businesses/${business.id}`)}>
         {photo}
         <div className='business-item-content'>
           <span>{ index }. {business.name} </span><br /> <br />

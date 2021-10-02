@@ -16,6 +16,33 @@
     z-index: -5;
   }
 
+  #photo-button {
+    position: absolute;
+    top: 84%;
+    left: 69.5%;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    color: white;
+    background-color: transparent;
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    padding-bottom: 12px;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 12px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition: all 0.8s;
+    cursor: pointer;
+  }
+
+  #photo-button:hover {
+    background-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,1);
+    box-shadow: none;
+  }
+
   .business-title {
     position: absolute;
     top: 70%;
@@ -27,7 +54,7 @@
     color: white;
     letter-spacing: -0.4px;
     text-align: left;
-    p {
+    #info-under-title {
       font-size: 16px;
       b {
         display: flex;
