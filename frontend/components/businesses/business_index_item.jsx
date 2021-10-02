@@ -16,7 +16,7 @@ class BusinessIndexItem extends React.Component {
       <div></div>; 
 
     return (
-      <li className='single-business-item' onClick={() => this.props.history.push(`/businesses/${index}`)}>
+      <li className='single-business-item' onClick={() => this.props.history.push(`/businesses/${business.id}`)}>
         {photo}
         <div className='business-item-content'>
           <span>{ index }. {business.name} </span><br /> <br />
