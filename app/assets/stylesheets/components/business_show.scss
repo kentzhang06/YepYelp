@@ -3,34 +3,46 @@
   position: relative;
   text-align: center;
   display: flex;
-  width: 100vw;
+  width: 99vw;
   height: 426px;
   margin-top: 30px;
+  background-image: linear-gradient(rgba(0,0,0, 0) 0%,rgba(0,0,0, 1) 100%);
 
   img {
     width: 20%;
-    height: 98%;
+    height: 100%;
     opacity: 0.85;
     object-fit: cover;
+    z-index: -5;
   }
 
   .business-title {
     position: absolute;
-    top: 75%;
-    left: 31%;
-    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 19%;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 48px;
     font-weight: 700px;
-    word-wrap: break-word !important;
-    word-break: break-word !important;
-    overflow-wrap: break-word;
-    line-height: 56px;
+    line-height: 40px;
     color: white;
     letter-spacing: -0.4px;
     text-align: left;
     p {
       font-size: 16px;
+      b {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    div {
+      margin-right: 5px;
+    }
+
+    #claimed-section {
+      display: flex;
+      align-items: center;
+      color: rgba(0,131,143,1);
     }
   }
 }
@@ -62,6 +74,7 @@
 .business-content {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 #business-review-button:hover {
@@ -72,7 +85,14 @@
   display: flex;
   flex-direction: column;
   width: 760px;
+  height: 3000px;
   border: 1px solid black;
+
+  .review-container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+  }
 }
 
 #business-info-right {
@@ -82,24 +102,48 @@
   width: 365px;
   height: 270px;
   border: 1px solid black;
-  margin: 15px;
+  top: 25px;
+  margin-left: 20px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 
-  div {
+  #business-url, #business-phone {
     display: flex;
     justify-content: space-between;
+  }
+
+  #business-address {
+    a {
+      text-decoration: none;
+      color: rgba(0,131,143,1);
+    }
+    p {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 15px;
+      color: rgb(110, 108, 108);
+    }
+  }
+
+  div {
     align-items: center;
     border-bottom: 1px solid #999;
     font-size: 14px;
-    color: rgba(0,131,143,1);
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     font-weight: 600;
     margin-inline: 10px;
-    font-family: 'Headland One', serif;
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
 
     img {
       width: 24px;
       height: 24px;
     }
+
   }
+
+  #business-url {
+    color: rgba(0,131,143,1);
+  }
+
 }
 

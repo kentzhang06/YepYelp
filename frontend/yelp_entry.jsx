@@ -30,7 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchBusiness = fetchBusiness;
     window.createBusiness = createBusiness;
     // TESTING END
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
 })

@@ -63,6 +63,22 @@
   }
 }
 
+#logout-button {
+  margin: 4px;
+  font-family: 'Headland One', serif;
+  background-color: #E07B00;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+#logout-button:hover {
+  background-color: #bd6c09;
+}
+
 .form-footer {
   display: flex;
   justify-content: right;

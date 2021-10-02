@@ -24,7 +24,7 @@ class NavBar extends React.Component {
     let display = (currentUser) ? 
       <div>
         <p> Welcome {currentUser.firstName} </p>
-        <button onClick={logout}>Log Out</button>
+        <button id="logout-button" onClick={logout}>Log Out</button>
       </div>
       :
       <div id='nav-bar-buttons'>
