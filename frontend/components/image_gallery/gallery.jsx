@@ -8,28 +8,38 @@ class Gallery extends React.Component {
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId)
-      .then(() => window.scrollTo(0, 0));
+      .then(() => window.scrollTo(0, 0))
+      .then(() => {
+        const modalEle = document.querySelector(".modal");
+        const modalImage = document.querySelector(".modalImage");
+        Array.from(document.querySelectorAll(".ImgThumbnail")).forEach(item => {
+          item.addEventListener("click", event => {
+            modalEle.style.display = "block";
+            modalImage.src = event.target.src;
+          });
+        });
+        const closeEle = document.querySelector(".close")
+        if(closeEle) {
+          closeEle.addEventListener("click", () => {
+            modalEle.style.display = "none";
+          });
+        };
+      });
+
   }
 
   render() {
     const { business } = this.props;
-    const displayImages = (business) ?
-      business.images.map((image) => {
-        return (
-          <div className="medium-6 large-3 xlarge-2">
-            <a href="#" data-toggle="galleryModal">
-              <img src={image} alt="" />
-            </a>
-          </div>
-        )
-      }) : <div></div>;
+    if (!business) return null;
+
     return (
       <div>
         <NavSearchBarContainer />
         <h1>Image Modal Gallery Example</h1>
-        <img className="ImgThumbnail" src="https://images.pexels.com/photos/3540375/pexels-photo-3540375.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/>
-        <img className="ImgThumbnail" src="https://i.picsum.photos/id/237/536/354.jpg"/>
-        <img className="ImgThumbnail" src="https://images.pexels.com/photos/3802510/pexels-photo-3802510.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"/>
+        {
+          business.images.map((image, i) => <img className="ImgThumbnail"  key={i} src={image.url} alt="" />)
+        }
+        
         <div className="modal">
           <span className="close">×</span>
           <img className="modalImage" id="img01" />
