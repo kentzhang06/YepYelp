@@ -14,4 +14,8 @@ class Business < ApplicationRecord
       errors[:business] << "Must be attached"
     end
   end
+
+  def self.filter_by_keyword(keyword)
+    Business.where("lower(name) LIKE ?", "%#{keyword.downcase}%")
+  end
 end

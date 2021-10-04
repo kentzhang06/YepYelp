@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "../search_bar/search_bar";
 import { withRouter } from "react-router";
+import SearchBarContainer from "../search_bar/search_bar_container";
 
 class NavSearchBar extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class NavSearchBar extends React.Component {
           <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
           <h2>YEPYELP</h2>
         </div>
-        <SearchBar />
+        <SearchBarContainer />
         <button id="write-review-button">Write a Review</button>
         {displayLogin}
         {displaySignup}

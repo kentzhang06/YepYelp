@@ -1,24 +1,45 @@
 import React from "react";
+import { withRouter } from "react-router";
 
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      search: null
+    };
+    this.searchCategory = this.searchCategory.bind(this);
+    this.submitSearch = this.submitSearch.bind(this);
+  }
+
+  searchCategory(e) {
+    this.setState({ search: e.target.value });
+  }
+
+  componentDidMount() {
+    this.props.updateKeyword(this.state.search);
+  }
+
+  submitSearch() {
+    this.props.updateKeyword(this.state.search);
+    console.log(this.props);
+    this.props.history.push(`/businesses?keyword=${this.state.search}`);
   }
 
   render() {
+    const { history } = this.props;
     return (
       <div>
         <form id="search-form">
           <span className="search-label" id="find-label">Find</span>
 
-          <input type="text" placeholder="restaurants, villages, academies..." />
+          <input type="text" placeholder="restaurants, villages, academies..." onChange={this.searchCategory}/>
           <span className="search-label">Near</span>
           <input type="text" placeholder="San Francisco, CA" />
-          <button><ion-icon name="search-outline"></ion-icon></button>
+          <button onClick={this.submitSearch}><ion-icon name="search-outline"></ion-icon></button>
         </form>
       </div>
     )
   }
 }
 
-export default SearchBar;
+export default withRouter(SearchBar);
