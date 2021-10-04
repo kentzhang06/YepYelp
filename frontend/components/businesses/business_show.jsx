@@ -49,18 +49,27 @@ class BusinessShow extends React.Component {
     let businessInfo = (business) ?
       <div id="business-info-right">
         <div id="business-url">
-          { business.url } <img src={window.redirectUrl} alt="" />
+          <span>
+            { business.url }
+          </span>
+          <img src={window.redirectUrl} alt="" />
         </div>
         <div id="business-phone">
-          { business.phone } <img src={window.phoneUrl} alt="" />
+          <span>
+            { business.phone }
+          </span>
+          <img src={window.phoneUrl} alt="" />
         </div>
         <div id="business-address">
 
-          <a target="_blank" href={`https://www.google.com/maps/dir//${business.lat},${business.long}`}>Get Directions</a>
+          <span id="address-with-pic">
+            <a target="_blank" href={`https://www.google.com/maps/dir//${business.lat},${business.long}`}>Get Directions</a>
 
-          <span id="address-string">
-            { business.address} { business.city}, { business.state }, { business.zipCode } <img src={window.directionUrl} alt="" />
+            <span id="address-string">
+              { business.address} { business.city}, { business.state }, { business.zipCode }
+            </span>
           </span>
+          <img src={window.directionUrl} alt="" />
         </div>
       </div>
       : <div></div>;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SignupLoginBanner from "./signup_login_banner";
 import signupPic from '../../../app/assets/images/signup_login_pic.png';
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,6 +40,12 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
+    if(this.state.email) this.emailError = <div></div>;
+    if(this.state.firstName) this.firstNameError = <div></div>;
+    if(this.state.lastName) this.lastNameError = <div></div>;
+    if(this.state.zipCode) this.zipCodeError = <div></div>;
+    if(this.state.password) this.passwordError = <div></div>;
+    
     return (e) => this.setState({ [field]: e.target.value});
   }
 
@@ -122,4 +128,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default SignupForm;

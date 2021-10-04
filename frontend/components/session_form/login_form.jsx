@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
 
     this.runDemo = this.runDemo.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateErrors = this.updateErrors.bind(this);
   }
 
   runDemo(e) {
@@ -30,11 +31,19 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.updateErrors();
     this.props.processForm(user)
       .then(() => this.props.history.push('/'));
   }
 
+  updateErrors() {
+    if(!this.state.email) this.emailError = <div className='error-fields'>Email can't be blank</div>;
+    if(!this.state.password) this.passwordError = <div className='error-fields'>Password can't be blank</div>;
+  }
+
   update(field) {
+    if(this.state.email) this.emailError = <div></div>;
+    if(this.state.password) this.passwordError = <div></div>;
     return (e) => this.setState({ [field]: e.target.value});
   }
 
@@ -69,8 +78,9 @@ class SessionForm extends React.Component {
           <form id="form" onSubmit={this.handleSubmit}>
            
             <input type="text" placeholder="Email" value={this.state.email} onChange={this.update('email')} />
+            {this.emailError}
             <input type="password" placeholder="Password" value={this.state.password} onChange={this.update('password')} />
-
+            {this.passwordError}
             {this.displayLoginErrors}
             <button>{formType}</button>
             {demoButton}  
