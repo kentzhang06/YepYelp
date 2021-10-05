@@ -1,7 +1,7 @@
 import React from "react";
 import BusinessIndexItem from "./business_index_item";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
-import { businessIncludesCuisine, businessIncludesPrice, parseCategory, parseLocation, capitalize } from "../../util/business_util";
+import { businessIncludesCuisine, businessIncludesPrice, businessIncludesLoc, parseCategory, parseLocation, capitalize } from "../../util/business_util";
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -9,7 +9,8 @@ class BusinessIndex extends React.Component {
 
     this.state = {
       cuisine: "none",
-      price: "none"
+      price: "none",
+      loc: "none"
     }
 
     this.allCategories = [
@@ -19,7 +20,13 @@ class BusinessIndex extends React.Component {
       "Shabu",
       "Dessert",
       "Seafood"
-    ]
+    ];
+
+    this.allLocations = [
+      "San Francisco",
+      "San Mateo",
+      "San Jose"
+    ];
 
     this.handleCategoryBox = this.handleCategoryBox.bind(this);
   }
@@ -32,19 +39,17 @@ class BusinessIndex extends React.Component {
     if((this.state).field === e.target.value) {
       this.setState({ [field]: "none"});
     } else {
-      this.setState({ [field]: e.target.value, checked: true });
+      this.setState({ [field]: e.target.value });
     }
     this.props.history.push(`/businesses`);
-    this.props.updateKeyword("");
-    this.props.updateLocation("");
+    this.props.updateSearchFilters("", "");
   }
 
   handlePrice(n, e) {
     this.setState({ price: n });
     console.log(this.state.price)
     this.props.history.push(`/businesses`);
-    this.props.updateKeyword("");
-    this.props.updateLocation("");
+    this.props.updateSearchFilters("", "");
   }
 
   render() {
@@ -53,7 +58,9 @@ class BusinessIndex extends React.Component {
 
     let index = 1;
     let displayBusinesses = businesses.map((business, i) => {
-      if ((businessIncludesCuisine(business, this.state.cuisine) || (this.state.cuisine === "none")) && (businessIncludesPrice(business, this.state.price) || (this.state.price === "none"))) {
+      if ((businessIncludesCuisine(business, this.state.cuisine) || (this.state.cuisine === "none")) &&
+        (businessIncludesPrice(business, this.state.price) || (this.state.price === "none")) &&
+        (businessIncludesLoc(business, this.state.loc) || (this.state.loc === "none")) ){
         return (
           <BusinessIndexItem index={index++} key={business.id} business={business}/>
         )
@@ -68,9 +75,23 @@ class BusinessIndex extends React.Component {
         </label>
         );
     });
-    let headerCategory = "The Best 10";
+
+    let locationsDisplay = this.allLocations.map((location, i) => {
+      return (
+        <label className="category-radio" key={i}> 
+          <input type="radio" name="loc" value={location} onClick={(e) => this.handleCategoryBox('loc', e)}/>
+          {location}
+        </label>
+        );
+    });
+
+    let headerCategory = "The Best";
     let keyword = parseCategory(history);
-    let loc = parseLocation(history);
+    let locationTitle = "";
+    if (this.state.loc !== "none") {
+      locationTitle = this.state.loc;
+    }
+    let loc = parseLocation(history) || locationTitle;
 
     if(keyword) {
       headerCategory = capitalize(keyword);
@@ -104,9 +125,19 @@ class BusinessIndex extends React.Component {
               None
               </label>
             </form>
+            <h3>
+              Locations
+            </h3>
+            <form className="location-display">
+              {locationsDisplay}
+              <label className="category-radio"> 
+              <input type="radio" name="loc" value="none" onClick={(e) => this.handleCategoryBox('loc', e)}/>
+              None
+              </label>
+            </form>
           </div>
-          <ul>
-            <h1>{headerCategory} Restaurants near {loc}, 94112</h1>
+          <ul className="business-index-main-content">
+            <h1>{headerCategory} Restaurants near {loc}</h1>
             <h2>All Results </h2>
             { displayBusinesses }
           </ul>

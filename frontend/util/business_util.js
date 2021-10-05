@@ -12,6 +12,10 @@ export const businessIncludesPrice = (business, price) => {
   return business.priceRange === price;
 }
 
+export const businessIncludesLoc = (business, loc) => {
+  return business.city === loc;
+}
+
 export const parseCategory = (history) => {
   return capitalize(history.location.search.slice(9).split("&")[0]);
 }

@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchBusinesses } from "../../actions/business_actions";
 import BusinessIndex from "../businesses/business_index";
-import { updateKeyword, updateLocation } from "../../actions/filter_actions";
+import { updateSearchFilters } from "../../actions/filter_actions";
 
 const mapStateToProps = (state) => {
   return {
@@ -12,8 +12,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBusinesses: () => dispatch(fetchBusinesses()),
-    updateKeyword: (keyword) => dispatch(updateKeyword(keyword)),
-    updateLocation: (location) => dispatch(updateLocation(location))
+    updateSearchFilters: (keyword, location) => dispatch(updateSearchFilters(keyword, location)),
+
   }
 }
 

@@ -19,6 +19,11 @@
   }
 }
 
+.business-index-main-content {
+  width: 700px;
+  height: auto;
+}
+
 .single-business-item:hover {
   box-shadow: 0 0 10px black;
   cursor: pointer;
@@ -103,7 +108,7 @@
   }
 }
 
-.category-display {
+.category-display, .location-display {
   display: flex;
   flex-direction: column;
   font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;

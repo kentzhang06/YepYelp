@@ -16,18 +16,19 @@ const updateLoc = (location) => {
   };
 };
 
-export function updateKeyword(keyword) {
+export function updateSearchFilters(keyword, location) {
   return (dispatch, getState) => {
     dispatch(updateKey(keyword));
-    return fetchBusinesses(getState().ui.filters)(dispatch);
-    // delicious curry!
-  };
-}
-
-export function updateLocation(location) {
-  return (dispatch, getState) => {
     dispatch(updateLoc(location));
     return fetchBusinesses(getState().ui.filters)(dispatch);
     // delicious curry!
   };
 }
+
+// export function updateLocation(location) {
+//   return (dispatch, getState) => {
+//     dispatch(updateLoc(location));
+//     return fetchBusinesses(getState().ui.filters)(dispatch);
+//     // delicious curry!
+//   };
+// }
