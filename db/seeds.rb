@@ -226,6 +226,66 @@ b10 = Business.create(
   owner_id: u2.id
 )
 
+b11 = Business.create(
+  name: 'Eighth Gate',
+  address: '8 Lee St.',
+  city: 'San Mateo',
+  state: 'CA',
+  zip_code: '94401',
+  url: 'theeighth.com',
+  phone: '888-989-9486',
+  price_range: 4,
+  opening_hours: '8:30 AM - 8:00 PM',
+  lat: 37.5612,
+  long: -122.323441,
+  owner_id: u5.id
+)
+
+b12 = Business.create(
+  name: 'Shadow Clone',
+  address: '905 Noon St.',
+  city: 'San Mateo',
+  state: 'CA',
+  zip_code: '94401',
+  url: 'theinfiniteclones.com',
+  phone: '123-999-9446',
+  price_range: 4,
+  opening_hours: '5:30 PM - 12:00 AM',
+  lat: 37.5798,
+  long: -122.3296,
+  owner_id: u7.id
+)
+
+b13 = Business.create(
+  name: 'The Chidori',
+  address: '1 Chirp St.',
+  city: 'San Jose',
+  state: 'CA',
+  zip_code: '95112',
+  url: 'loudmoves.com',
+  phone: '780-996-6446',
+  price_range: 4,
+  opening_hours: '5:30 AM - 6:00 PM',
+  lat: 37.3363,
+  long: -121.8818,
+  owner_id: u3.id
+)
+
+b14 = Business.create(
+  name: 'The Rasengan',
+  address: '9 Ball St.',
+  city: 'San Jose',
+  state: 'CA',
+  zip_code: '95112',
+  url: 'rasenganmoves.com',
+  phone: '110-116-6116',
+  price_range: 4,
+  opening_hours: '7:30 AM - 7:00 PM',
+  lat: 37.3517,
+  long: -121.8957,
+  owner_id: u7.id
+)
+
 f1 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/bbq/bbq1.jpg')
 f2 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/bbq/bbq2.jpg')
 f3 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/bbq/bbq3.jpg')
@@ -301,6 +361,37 @@ f63 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/dessert/dessert
 f64 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/dessert/dessert4.jpg')
 f65 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/dessert/dessert5.jpg')
 f66 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/dessert/dessert6.jpg')
+
+f67 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion1.jpg')
+f68 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion2.jpg')
+f69 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion3.jpg')
+f70 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion4.jpg')
+f71 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion5.jpg')
+f72 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion6.jpg')
+f73 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/fusion/fusion7.jpg')
+
+f74 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi1.jpg')
+f75 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi2.jpg')
+f76 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi3.jpg')
+f77 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi4.jpg')
+f78 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi5.jpg')
+f79 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi6.jpg')
+f80 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/mochi/mochi7.jpg')
+
+f81 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice1.jpg')
+f82 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice2.jpg')
+f83 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice3.jpg')
+f84 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice4.jpg')
+f85 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice5.jpg')
+f86 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/rice/rice6.jpg')
+
+f87 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako1.jpg')
+f88 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako2.jpg')
+f89 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako3.jpg')
+f90 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako4.jpg')
+f91 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako5.jpg')
+f92 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/tako/tako6.jpg')
+
 
 
 
@@ -380,6 +471,36 @@ b10.photos.attach(io: f64, filename: "dessert4.jpg")
 b10.photos.attach(io: f65, filename: "dessert5.jpg")
 b10.photos.attach(io: f66, filename: "dessert6.jpg")
 
+b11.photos.attach(io: f67, filename: "fusion1.jpg")
+b11.photos.attach(io: f68, filename: "fusion2.jpg")
+b11.photos.attach(io: f69, filename: "fusion3.jpg")
+b11.photos.attach(io: f70, filename: "fusion4.jpg")
+b11.photos.attach(io: f71, filename: "fusion5.jpg")
+b11.photos.attach(io: f72, filename: "fusion6.jpg")
+b11.photos.attach(io: f73, filename: "fusion7.jpg")
+
+b12.photos.attach(io: f74, filename: "mochi1.jpg")
+b12.photos.attach(io: f75, filename: "mochi2.jpg")
+b12.photos.attach(io: f76, filename: "mochi3.jpg")
+b12.photos.attach(io: f77, filename: "mochi4.jpg")
+b12.photos.attach(io: f78, filename: "mochi5.jpg")
+b12.photos.attach(io: f79, filename: "mochi6.jpg")
+b12.photos.attach(io: f80, filename: "mochi7.jpg")
+
+b13.photos.attach(io: f81, filename: "rice1.jpg")
+b13.photos.attach(io: f82, filename: "rice2.jpg")
+b13.photos.attach(io: f83, filename: "rice3.jpg")
+b13.photos.attach(io: f84, filename: "rice4.jpg")
+b13.photos.attach(io: f85, filename: "rice5.jpg")
+b13.photos.attach(io: f86, filename: "rice6.jpg")
+
+b14.photos.attach(io: f87, filename: "tako1.jpg")
+b14.photos.attach(io: f88, filename: "tako2.jpg")
+b14.photos.attach(io: f89, filename: "tako3.jpg")
+b14.photos.attach(io: f90, filename: "tako4.jpg")
+b14.photos.attach(io: f91, filename: "tako5.jpg")
+b14.photos.attach(io: f92, filename: "tako6.jpg")
+
 
 b1.save!
 b2.save!
@@ -391,6 +512,10 @@ b7.save!
 b8.save!
 b9.save!
 b10.save!
+b11.save!
+b12.save!
+b13.save!
+b14.save!
 
 cuisine1 = Cuisine.create(cuisine_type: "Barbecue")
 cuisine2 = Cuisine.create(cuisine_type: "Sushi")
@@ -413,3 +538,10 @@ bc10 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b7.id)
 bc11 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b4.id)
 bc12 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b3.id)
 bc13 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b1.id)
+bc14 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b11.id)
+bc15 = BusinessCuisine.create(cuisine_id: cuisine1.id, business_id: b11.id)
+bc16 = BusinessCuisine.create(cuisine_id: cuisine5.id, business_id: b12.id)
+bc17 = BusinessCuisine.create(cuisine_id: cuisine1.id, business_id: b13.id)
+bc18 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b13.id)
+bc19 = BusinessCuisine.create(cuisine_id: cuisine2.id, business_id: b14.id)
+bc20 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b14.id)

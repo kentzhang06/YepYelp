@@ -31,7 +31,9 @@ class Business < ApplicationRecord
     if (!keyword && !location)
       Business.all
     else
-      Business.joins(:cuisines).where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%").where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
+      Business.joins(:cuisines)
+        .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
+        .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
         # .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         # .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
 

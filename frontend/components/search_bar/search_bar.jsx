@@ -28,14 +28,15 @@ class SearchBar extends React.Component {
   }
 
   submitSearch() {
-    this.props.updateKeyword(this.state.search);
     this.props.updateLocation(this.state.location);
+    this.props.updateKeyword(this.state.search);
     
     if (this.state.search || this.state.location){
       this.props.history.push(`/businesses?keyword=${this.state.search}&location=${this.state.location}`);
     }else {
       this.props.history.push(`/businesses`);
     }
+    
   }
 
   render() {
