@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_30_174322) do
+ActiveRecord::Schema.define(version: 2021_10_04_212238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 2021_09_30_174322) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "business_cuisines", force: :cascade do |t|
+    t.integer "cuisine_id", null: false
+    t.integer "business_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_business_cuisines_on_business_id"
+    t.index ["cuisine_id"], name: "index_business_cuisines_on_cuisine_id"
+  end
+
   create_table "businesses", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -53,6 +62,12 @@ ActiveRecord::Schema.define(version: 2021_09_30_174322) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_businesses_on_name"
     t.index ["owner_id"], name: "index_businesses_on_owner_id"
+  end
+
+  create_table "cuisines", force: :cascade do |t|
+    t.string "cuisine_type", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

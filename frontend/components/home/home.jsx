@@ -1,9 +1,7 @@
 import React from "react";
-import naruto from '../../../app/assets/images/naruto-ramen.png';
-import fishIcon from '../../../app/assets/images/fish.png';
 import NavBarContainer from "../nav_bar/nav_bar_container";
-import SearchBar from "../search_bar/search_bar";
 import { Link } from "react-router-dom";
+import SearchBarContainer from "../search_bar/search_bar_container";
 
 class Home extends React.Component {
   constructor(props) {
@@ -22,7 +20,7 @@ class Home extends React.Component {
             <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
             <h2>YEPYELP</h2>
           </Link>
-          <SearchBar />
+          <SearchBarContainer />
           <img id="naruto-home" src={window.narutoRamenUrl} alt="naruto" />
         </div>
       </div>

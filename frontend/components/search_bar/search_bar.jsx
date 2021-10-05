@@ -5,7 +5,7 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: null
+      search: this.props.history.location.search.slice(9)
     };
     this.searchCategory = this.searchCategory.bind(this);
     this.submitSearch = this.submitSearch.bind(this);
@@ -21,8 +21,10 @@ class SearchBar extends React.Component {
 
   submitSearch() {
     this.props.updateKeyword(this.state.search);
-    console.log(this.props);
-    this.props.history.push(`/businesses?keyword=${this.state.search}`);
+    console.log(this.props.history);
+    if (this.state.search){
+      this.props.history.push(`/businesses?keyword=${this.state.search}`);
+    }
   }
 
   render() {
@@ -32,7 +34,7 @@ class SearchBar extends React.Component {
         <form id="search-form">
           <span className="search-label" id="find-label">Find</span>
 
-          <input type="text" placeholder="restaurants, villages, academies..." onChange={this.searchCategory}/>
+          <input type="text" value={this.state.search} placeholder="restaurants, villages, academies..." onChange={this.searchCategory}/>
           <span className="search-label">Near</span>
           <input type="text" placeholder="San Francisco, CA" />
           <button onClick={this.submitSearch}><ion-icon name="search-outline"></ion-icon></button>

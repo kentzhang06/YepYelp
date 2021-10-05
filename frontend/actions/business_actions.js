@@ -17,8 +17,8 @@ const receiveBusiness = (business) => {
   };
 };
 
-export const fetchBusinesses = () => dispatch => {
-  return BApiUtil.fetchBusinesses()
+export const fetchBusinesses = (filters) => dispatch => {
+  return BApiUtil.fetchBusinesses(filters)
     .then((businesses) => dispatch(receiveBusinesses(businesses)));
 };
 

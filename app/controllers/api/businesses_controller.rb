@@ -2,12 +2,13 @@ class Api::BusinessesController < ApplicationController
   before_action :require_logged_in, only: [:create]
 
   def index
-    @businesses = Business.with_attached_photos.filter_by_keyword(params[:keyword])
+  
+    @businesses = Business.with_attached_photos.includes(:cuisines).filter_by_keyword(params[:keyword])
     render :index
   end
 
   def show
-    @business = Business.with_attached_photos.find_by(id: params[:id])
+    @business = Business.with_attached_photos.includes(:cuisines).find_by(id: params[:id])
     render :show
   end
 

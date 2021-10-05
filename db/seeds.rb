@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+BusinessCuisine.destroy_all
 Business.destroy_all
+Cuisine.destroy_all
 User.destroy_all
 
 require 'open-uri'
@@ -389,3 +391,25 @@ b7.save!
 b8.save!
 b9.save!
 b10.save!
+
+cuisine1 = Cuisine.create(cuisine_type: "Barbecue")
+cuisine2 = Cuisine.create(cuisine_type: "Sushi")
+cuisine3 = Cuisine.create(cuisine_type: "Soup")
+cuisine4 = Cuisine.create(cuisine_type: "Shabu")
+cuisine5 = Cuisine.create(cuisine_type: "Dessert")
+cuisine6 = Cuisine.create(cuisine_type: "Seafood")
+
+bc1 = BusinessCuisine.create(cuisine_id: cuisine1.id, business_id: b1.id)
+bc2 = BusinessCuisine.create(cuisine_id: cuisine1.id, business_id: b2.id)
+bc3 = BusinessCuisine.create(cuisine_id: cuisine2.id, business_id: b3.id)
+bc3 = BusinessCuisine.create(cuisine_id: cuisine2.id, business_id: b7.id)
+bc4 = BusinessCuisine.create(cuisine_id: cuisine3.id, business_id: b5.id)
+bc5 = BusinessCuisine.create(cuisine_id: cuisine3.id, business_id: b6.id)
+bc6 = BusinessCuisine.create(cuisine_id: cuisine3.id, business_id: b9.id)
+bc7 = BusinessCuisine.create(cuisine_id: cuisine4.id, business_id: b6.id)
+bc8 = BusinessCuisine.create(cuisine_id: cuisine5.id, business_id: b10.id)
+bc9 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b8.id)
+bc10 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b7.id)
+bc11 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b4.id)
+bc12 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b3.id)
+bc13 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b1.id)

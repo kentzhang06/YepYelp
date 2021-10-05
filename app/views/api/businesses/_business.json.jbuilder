@@ -7,4 +7,9 @@ json.images business.photos do |photo|
   json.url url_for(photo)
 end
 
+json.cuisines do
+  json.array! business.cuisines do |cuisine|
+    json.cuisine cuisine.cuisine_type
+  end
+end
 
