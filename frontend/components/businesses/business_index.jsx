@@ -1,7 +1,7 @@
 import React from "react";
 import BusinessIndexItem from "./business_index_item";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
-import { businessIncludesCuisine, businessIncludesPrice } from "../../util/business_util";
+import { businessIncludesCuisine, businessIncludesPrice, parseCategory, parseLocation, capitalize } from "../../util/business_util";
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -36,6 +36,7 @@ class BusinessIndex extends React.Component {
     }
     this.props.history.push(`/businesses`);
     this.props.updateKeyword("");
+    this.props.updateLocation("");
   }
 
   handlePrice(n, e) {
@@ -43,6 +44,7 @@ class BusinessIndex extends React.Component {
     console.log(this.state.price)
     this.props.history.push(`/businesses`);
     this.props.updateKeyword("");
+    this.props.updateLocation("");
   }
 
   render() {
@@ -51,7 +53,7 @@ class BusinessIndex extends React.Component {
 
     let index = 1;
     let displayBusinesses = businesses.map((business, i) => {
-      if ((businessIncludesCuisine(business, this.state.cuisine) || businessIncludesPrice(business, this.state.price)) || (this.state.cuisine === "none") && (this.state.price === "none")) {
+      if ((businessIncludesCuisine(business, this.state.cuisine) || (this.state.cuisine === "none")) && (businessIncludesPrice(business, this.state.price) || (this.state.price === "none"))) {
         return (
           <BusinessIndexItem index={index++} key={business.id} business={business}/>
         )
@@ -67,10 +69,11 @@ class BusinessIndex extends React.Component {
         );
     });
     let headerCategory = "The Best 10";
-    let keyword = history.location.search.slice(9);
+    let keyword = parseCategory(history);
+    let loc = parseLocation(history);
 
     if(keyword) {
-      headerCategory = keyword.charAt(0).toUpperCase() + keyword.slice(1);
+      headerCategory = capitalize(keyword);
     } else if (this.state.cuisine !== "none") {
       headerCategory = this.state.cuisine;
     }
@@ -103,7 +106,7 @@ class BusinessIndex extends React.Component {
             </form>
           </div>
           <ul>
-            <h1>{headerCategory} Restaurants near San Francisco, 94112</h1>
+            <h1>{headerCategory} Restaurants near {loc}, 94112</h1>
             <h2>All Results </h2>
             { displayBusinesses }
           </ul>

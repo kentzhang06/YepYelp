@@ -19,7 +19,7 @@ class BusinessIndexItem extends React.Component {
     
     const displayCuisines = business.cuisines.map((cuisine, i) => {
       return (
-        <div id="cuisine-bullet">
+        <div id="cuisine-bullet" key={i}>
 
           <div>{cuisine.cuisine}</div>
           <span>&#8226;</span>
@@ -36,6 +36,7 @@ class BusinessIndexItem extends React.Component {
           <p>Address: {business.address} </p><br />
           <p>City: {business.city} </p><br />
           <p>State: {business.state} </p><br />
+          <p>Zip Code: {business.zipCode} </p><br />
           <div className="item-cuisines">
             {displayCuisines}
             <div> {'$'.repeat(business.priceRange)} </div>

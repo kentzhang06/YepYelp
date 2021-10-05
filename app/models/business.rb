@@ -23,13 +23,22 @@ class Business < ApplicationRecord
     end
   end
 
-  def self.filter_by_keyword(keyword)
-
-    if (!keyword)
+  def self.filter_businesses(keyword, location)
+    # latmin, latmax = bounds[:southWest][:lat], bounds[:northEast][:lat]
+    # lngmin, lngmax = bounds[:southWest][:lng], bounds[:northEast][:lng]
+    keyword = (keyword) ? keyword.downcase : "" 
+    location = (location) ? location.downcase : "" 
+    if (!keyword && !location)
       Business.all
     else
-      Business.joins(:cuisines).where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword.downcase}%", "%#{keyword.downcase}%")
+      Business.joins(:cuisines).where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%").where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
+        # .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
+        # .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
+
       # Business.where("lower(name) LIKE ?", "%#{keyword.downcase}%")
     end
   end
 end
+
+#Business.joins(:cuisines).where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%barbecue%", "%barbecue%").where("businesses.lat BETWEEN ? AND ?", 37.73, 37.7796).where("businesses.long BETWEEN ? AND ?",-122.5017,-122.2016)
+# Business.joins(:cuisines).where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%barbecue%", "%barbecue%").where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%san%", "%san%")
