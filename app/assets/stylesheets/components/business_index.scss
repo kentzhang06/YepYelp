@@ -58,6 +58,23 @@
   }
 }
 
+#cuisine-bullet {
+  display: flex;
+  div, span {
+    margin-right: 10px;
+  }
+  div {
+    padding-inline: 4px;
+    border-radius: 4px;
+    background-color: #E07B00;
+  }
+}
+
+.item-cuisines {
+  display: flex;
+}
+
+
 // STICKY SERACH-NAV
 .sticky-search-nav {
   position: -webkit-sticky;
@@ -76,5 +93,52 @@
 #filter-side-bar {
   width: 300px;
   height: 800px;
-  background-color: white;
+  // background-color: white;
+
+  h3 {
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    margin: 10px;
+  }
+}
+
+.category-display {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.category-radio {
+  padding: 4px;
+}
+
+// price buttons
+.price-filter {
+  display: flex;
+  button {
+    display: inline-block;
+    width: 80px;
+    padding: 6px 16px;
+    border-width: 1px;
+    border-style: solid;
+    background-color: #fad6a5;
+    border-color: #E07B00;
+  }
+  #price-1 {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+  }
+  #price-4 {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+  }
+
+  button:hover {
+    background-color: transparent;
+    transition: background-color .4s;
+    cursor: pointer;
+  }
 }

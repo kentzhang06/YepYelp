@@ -21,9 +21,11 @@ class SearchBar extends React.Component {
 
   submitSearch() {
     this.props.updateKeyword(this.state.search);
-    console.log(this.props.history);
+    
     if (this.state.search){
       this.props.history.push(`/businesses?keyword=${this.state.search}`);
+    }else {
+      this.props.history.push(`/businesses`);
     }
   }
 
