@@ -2,6 +2,7 @@ import React from "react";
 import BusinessIndexItem from "./business_index_item";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
 import { businessIncludesCuisine, businessIncludesPrice, businessIncludesLoc, parseCategory, parseLocation, capitalize } from "../../util/business_util";
+import BusinessMap from "./business_map";
 
 class BusinessIndex extends React.Component {
   constructor(props) {
@@ -42,18 +43,18 @@ class BusinessIndex extends React.Component {
       this.setState({ [field]: e.target.value });
     }
     this.props.history.push(`/businesses`);
-    this.props.updateSearchFilters("", "");
+    this.props.updateSearchFilters("", "", "");
   }
 
   handlePrice(n, e) {
     this.setState({ price: n });
     console.log(this.state.price)
     this.props.history.push(`/businesses`);
-    this.props.updateSearchFilters("", "");
+    this.props.updateSearchFilters("", "", "");
   }
 
   render() {
-    const { businesses, history } = this.props;
+    const { businesses, history, updateSearchFilters } = this.props;
     if (!businesses) return null;
 
     let index = 1;
@@ -142,7 +143,7 @@ class BusinessIndex extends React.Component {
             { displayBusinesses }
           </ul>
           <div id='map'>
-            Map
+            <BusinessMap businesses={businesses} updateSearchFilters={updateSearchFilters}/>
           </div>
         </div>
       </div>

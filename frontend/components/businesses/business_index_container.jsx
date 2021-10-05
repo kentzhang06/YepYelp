@@ -12,8 +12,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchBusinesses: () => dispatch(fetchBusinesses()),
-    updateSearchFilters: (keyword, location) => dispatch(updateSearchFilters(keyword, location)),
-
+    updateSearchFilters: (keyword, location, bounds) => dispatch(updateSearchFilters(keyword, location, bounds))
   }
 }
 
