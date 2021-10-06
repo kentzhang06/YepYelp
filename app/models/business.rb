@@ -34,8 +34,6 @@ class Business < ApplicationRecord
     if (keyword == "" && location == "" && price == "" && bounds != "")
       Business.where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
-    # elsif (keyword == "" && location == "" && price == "" && bounds == "")
-    #   Business.all
     elsif (price != "" && bounds != "")
       Business.joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
