@@ -136,7 +136,11 @@ class BusinessShow extends React.Component {
                       <div id="map-business-address-line">{business.address}</div>
                       <div>{business.city}, {business.state} {business.zipCode}</div>
                     </div>
-                    <button>Get Directions</button>
+                    <button onClick={(e) => {
+                      e.preventDefault();
+                      window.open(`https://www.google.com/maps/dir//${business.lat},${business.long}`, '_blank');
+                    }}
+                    >Get Directions</button>
                   </div>
                 </div>
               </div>
