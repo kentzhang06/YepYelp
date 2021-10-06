@@ -13,7 +13,7 @@ class BusinessIndexItem extends React.Component {
     if (!business) return null;
     const randomIndex = Math.floor(Math.random() * business.images.length);
     const photo = (business.images) ?
-      <img className={'business-preview-image'} src={business.images[randomIndex].url} alt="" /> 
+      <img className={'business-preview-image'} src={business.images[0].url} alt="" /> 
       :
       <div></div>;
     

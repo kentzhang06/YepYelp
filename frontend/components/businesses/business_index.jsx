@@ -85,14 +85,16 @@ class BusinessIndex extends React.Component {
     });
 
     let headerCategory = "The Best";
-    let keyword = parseCategory(history);
+    let keyword = parseCategory(history).toLowerCase();
     let locationTitle = "";
     if (this.state.location !== "") {
       locationTitle = this.state.location;
     }
     let loc = parseLocation(history) || locationTitle;
 
-    if(keyword) {
+    if (keyword == "restaurant" || keyword == "restaurants") {
+      headerCategory = "The Best";
+    }else if(keyword) {
       headerCategory = capitalize(keyword);
     } else if (this.state.keyword !== "") {
       headerCategory = this.state.keyword;

@@ -24,36 +24,38 @@ class Business < ApplicationRecord
   end
 
   def self.filter_businesses(keyword, location, bounds, price)
-    keyword = keyword.downcase 
+    keyword = keyword.downcase
+    
+
     location = location.downcase
     if (bounds != "")
       latmin, latmax = bounds[:southWest][:lat], bounds[:northEast][:lat]
       lngmin, lngmax = bounds[:southWest][:lng], bounds[:northEast][:lng]
     end
 
-    if (keyword == "" && location == "" && price == "" && bounds != "")
-      Business.where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
+    if (keyword == "" && location == "" && price == "" && bounds != "") || keyword == "restaurant" || keyword == "restaurants"
+      Business.with_attached_photos.includes(:cuisines).where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
     elsif (price != "" && bounds != "")
-      Business.joins(:cuisines)
+      Business.with_attached_photos.includes(:cuisines).joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
         .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
         .where("businesses.price_range = ?", price)
     elsif (bounds != "")
-      Business.joins(:cuisines)
+      Business.with_attached_photos.includes(:cuisines).joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
         .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
     elsif (price != "")
-      Business.joins(:cuisines)
+      Business.with_attached_photos.includes(:cuisines).joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
         .where("businesses.price_range = ?", price)
     else
-      Business.joins(:cuisines)
+      Business.with_attached_photos.includes(:cuisines).joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
       # Business.where("lower(name) LIKE ?", "%#{keyword.downcase}%")

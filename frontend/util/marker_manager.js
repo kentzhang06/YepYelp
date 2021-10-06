@@ -38,15 +38,16 @@ export default class MarkerManager {
     let icon = {
       url: window.uchihaUrl, // url
       scaledSize: new google.maps.Size(25, 30), // scaled size
-      origin: new google.maps.Point(0,0), // origin
-      anchor: new google.maps.Point(0, 0) // anchor
+      origin: new google.maps.Point(0, 0), // origin
+      anchor: new google.maps.Point(0, 0), // anchor
+      labelOrigin: new google.maps.Point(5, -6)
     };
 
     if (!this.markers[business.id]) {
       const marker = new google.maps.Marker({
         position: {lat: business.lat, lng: business.long},
         title: business.name,
-        label: {text: business.name, color: "black", fontWeight: "bold", fontFamily: "'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif"},
+        label: {text: business.name, color: "black", fontWeight: "900", fontFamily: "'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif"},
         animation: google.maps.Animation.DROP,
         icon: icon
       });
