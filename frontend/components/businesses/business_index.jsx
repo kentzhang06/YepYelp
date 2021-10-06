@@ -9,10 +9,9 @@ class BusinessIndex extends React.Component {
     super(props);
 
     this.state = {
-      cuisine: "none",
-      price: "none",
-      loc: "none",
-
+      keyword: parseCategory(this.props.history),
+      price: "",
+      location: parseLocation(this.props.history)
     }
 
     this.allCategories = [
@@ -29,34 +28,31 @@ class BusinessIndex extends React.Component {
       "San Mateo",
       "San Jose"
     ];
-
-    this.state = {
-      search: parseCategory(this.props.history),
-      location: parseLocation(this.props.history)
-    };
-
-    this.handleCategoryBox = this.handleCategoryBox.bind(this);
+    this.handleFilter = this.handleFilter.bind(this);
   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
   }
 
-  handleCategoryBox(field, e) {
-    if((this.state).field === e.target.value) {
-      this.setState({ [field]: "none"});
-    } else {
-      this.setState({ [field]: e.target.value });
-    }
-    this.props.history.push(`/businesses`);
-    this.props.updateSearchFilters("", "", "");
+  handleFilter(field, e) {
+    // return (e) => {
+    //   this.setState({ [field]: e.target.value });
+    //   console.log(this.state);
+    // }
+    console.log(this.state);
+    this.setState({ [field]: e.target.value });
   }
 
-  handlePrice(n, e) {
-    this.setState({ price: n });
-    console.log(this.state.price)
-    this.props.history.push(`/businesses`);
-    this.props.updateSearchFilters("", "", "");
+  componentDidUpdate(prevProps, prevState) {
+    // if (this.state.keyword || this.state.location){
+    //   this.props.history.push(`/businesses?keyword=${this.state.keyword}&location=${this.state.location}`);
+    // }else {
+    //   this.props.history.push(`/businesses`);
+    // }
+    if (prevState.keyword !== this.state.keyword || prevState.location !== this.state.location) {
+      this.props.history.push(`/businesses?keyword=${this.state.keyword}&location=${this.state.location}`);
+    }
   }
 
   render() {
@@ -65,19 +61,15 @@ class BusinessIndex extends React.Component {
 
     let index = 1;
     let displayBusinesses = businesses.map((business, i) => {
-      if ((businessIncludesCuisine(business, this.state.cuisine) || (this.state.cuisine === "none")) &&
-        (businessIncludesPrice(business, this.state.price) || (this.state.price === "none")) &&
-        (businessIncludesLoc(business, this.state.loc) || (this.state.loc === "none")) ){
         return (
           <BusinessIndexItem index={index++} key={business.id} business={business}/>
         )
-      }
     });
 
     let categoriesDisplay = this.allCategories.map((category, i) => {
       return (
         <label className="category-radio" key={i}> 
-          <input type="radio" name="cuisine" value={category} onClick={(e) => this.handleCategoryBox('cuisine', e)}/>
+          <input type="radio" name="keyword" value={category} onClick={(e) => this.handleFilter('keyword', e)}/>
           {category}
         </label>
         );
@@ -86,7 +78,7 @@ class BusinessIndex extends React.Component {
     let locationsDisplay = this.allLocations.map((location, i) => {
       return (
         <label className="category-radio" key={i}> 
-          <input type="radio" name="loc" value={location} onClick={(e) => this.handleCategoryBox('loc', e)}/>
+          <input type="radio" name="location" value={location} onClick={(e) => this.handleFilter('location', e)}/>
           {location}
         </label>
         );
@@ -95,29 +87,29 @@ class BusinessIndex extends React.Component {
     let headerCategory = "The Best";
     let keyword = parseCategory(history);
     let locationTitle = "";
-    if (this.state.loc !== "none") {
-      locationTitle = this.state.loc;
+    if (this.state.location !== "") {
+      locationTitle = this.state.location;
     }
     let loc = parseLocation(history) || locationTitle;
 
     if(keyword) {
       headerCategory = capitalize(keyword);
-    } else if (this.state.cuisine !== "none") {
-      headerCategory = this.state.cuisine;
+    } else if (this.state.keyword !== "") {
+      headerCategory = this.state.keyword;
     }
 
     let displayPriceFilter = 
       <div className="price-filter">
-        <button id="price-1" onClick={(e) => this.handlePrice(1, e)}>$</button>
-        <button id="price-2" onClick={(e) => this.handlePrice(2, e)}>$$</button>
-        <button id="price-3" onClick={(e) => this.handlePrice(3, e)}>$$$</button>
-        <button id="price-4" onClick={(e) => this.handlePrice(4, e)}>$$$$</button>
+        <button id="price-1" value={1} onClick={(e)=>this.handleFilter('price', e)}>$</button>
+        <button id="price-2" value={2} onClick={(e)=>this.handleFilter('price', e)}>$$</button>
+        <button id="price-3" value={3} onClick={(e)=>this.handleFilter('price', e)}>$$$</button>
+        <button id="price-4" value={4} onClick={(e)=>this.handleFilter('price', e)}>$$$$</button>
       </div>;
 
     return(
       <div>
         <div className="sticky-search-nav">
-          <NavSearchBarContainer/>
+          <NavSearchBarContainer key={businesses}/>
         </div>
         <div className='business-main'>
           <div id='filter-side-bar'>
@@ -128,7 +120,7 @@ class BusinessIndex extends React.Component {
             <form className="category-display">
               {categoriesDisplay}
               <label className="category-radio"> 
-              <input type="radio" name="cuisine" value="none" onClick={(e) => this.handleCategoryBox('cuisine', e)}/>
+              <input type="radio" name="keyword" value="" onClick={(e) =>this.handleFilter('keyword', e)}/>
               None
               </label>
             </form>
@@ -138,7 +130,7 @@ class BusinessIndex extends React.Component {
             <form className="location-display">
               {locationsDisplay}
               <label className="category-radio"> 
-              <input type="radio" name="loc" value="none" onClick={(e) => this.handleCategoryBox('loc', e)}/>
+              <input type="radio" name="location" value="" onClick={(e)=>this.handleFilter('location', e)}/>
               None
               </label>
             </form>
@@ -149,7 +141,7 @@ class BusinessIndex extends React.Component {
             { displayBusinesses }
           </ul>
           <div id='map'>
-            <BusinessMap businesses={businesses} updateSearchFilters={updateSearchFilters}/>
+            <BusinessMap key={this.state} filters={this.state} businesses={businesses} updateSearchFilters={updateSearchFilters}/>
           </div>
         </div>
       </div>

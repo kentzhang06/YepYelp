@@ -1,6 +1,7 @@
 export const UPDATE_KEYWORD = 'UPDATE_KEYWORD';
 export const UPDATE_LOCATION = 'UPDATE_LOCATION';
 export const UPDATE_BOUNDS = 'UPDATE_BOUNDS';
+export const UPDATE_PRICE = 'UPDATE_PRICE';
 import { fetchBusinesses } from "./business_actions";
 
 const updateKey = (keyword) => {
@@ -17,18 +18,26 @@ const updateLoc = (location) => {
   };
 };
 
-const updateB = (bounds) => {
+const updateBounds = (bounds) => {
   return {
     type: UPDATE_BOUNDS,
     bounds
   };
 };
 
-export function updateSearchFilters(keyword, location, bounds) {
+const updatePrice = (price) => {
+  return {
+    type: UPDATE_PRICE,
+    price
+  }
+}
+
+export function updateSearchFilters({keyword, price, location, bounds}) {
   return (dispatch, getState) => {
     dispatch(updateKey(keyword));
+    dispatch(updatePrice(price));
     dispatch(updateLoc(location));
-    dispatch(updateB(bounds));
+    dispatch(updateBounds(bounds));
     return fetchBusinesses(getState().ui.filters)(dispatch);
     // delicious curry!
   };

@@ -26,7 +26,7 @@ class NavSearchBar extends React.Component {
           <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
           <h2>YEPYELP</h2>
         </div>
-        <SearchBarContainer />
+        <SearchBarContainer key={history}/>
         <button id="write-review-button">Write a Review</button>
         {displayLogin}
         {displaySignup}

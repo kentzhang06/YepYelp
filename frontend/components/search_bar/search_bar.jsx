@@ -29,6 +29,12 @@ class SearchBar extends React.Component {
     
     if (this.state.search || this.state.location){
       this.props.history.push(`/businesses?keyword=${this.state.search}&location=${this.state.location}`);
+      this.props.updateSearchFilters({
+        keyword: this.state.search,
+        price: "",
+        location: this.state.location,
+        bounds: ""
+      });
     }else {
       this.props.history.push(`/businesses`);
     }
@@ -39,7 +45,7 @@ class SearchBar extends React.Component {
   render() {
     const { history } = this.props;
     return (
-      <div>
+      <div key={history}>
         <form id="search-form">
           <span className="search-label" id="find-label">Find</span>
 

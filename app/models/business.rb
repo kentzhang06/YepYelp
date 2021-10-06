@@ -23,20 +23,41 @@ class Business < ApplicationRecord
     end
   end
 
-  def self.filter_businesses(keyword, location, bounds)
-    keyword = (keyword) ? keyword.downcase : "" 
-    location = (location) ? location.downcase : "" 
-    if (!keyword && !location)
-      Business.all
-    else
+  def self.filter_businesses(keyword, location, bounds, price)
+    keyword = keyword.downcase 
+    location = location.downcase
+    if (bounds != "")
       latmin, latmax = bounds[:southWest][:lat], bounds[:northEast][:lat]
       lngmin, lngmax = bounds[:southWest][:lng], bounds[:northEast][:lng]
+    end
+
+    if (keyword == "" && location == "" && price == "" && bounds != "")
+      Business.where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
+        .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
+    # elsif (keyword == "" && location == "" && price == "" && bounds == "")
+    #   Business.all
+    elsif (price != "" && bounds != "")
       Business.joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
         .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
         .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
-
+        .where("businesses.price_range = ?", price)
+    elsif (bounds != "")
+      Business.joins(:cuisines)
+        .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
+        .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
+        .where("businesses.lat BETWEEN ? AND ?", latmin, latmax)
+        .where("businesses.long BETWEEN ? AND ?", lngmin, lngmax)
+    elsif (price != "")
+      Business.joins(:cuisines)
+        .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
+        .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
+        .where("businesses.price_range = ?", price)
+    else
+      Business.joins(:cuisines)
+        .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
+        .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")
       # Business.where("lower(name) LIKE ?", "%#{keyword.downcase}%")
     end
   end

@@ -1,4 +1,4 @@
-import { UPDATE_BOUNDS, UPDATE_KEYWORD, UPDATE_LOCATION } from "../actions/filter_actions";
+import { UPDATE_BOUNDS, UPDATE_KEYWORD, UPDATE_LOCATION, UPDATE_PRICE } from "../actions/filter_actions";
 
 const filterReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -12,6 +12,9 @@ const filterReducer = (state = {}, action) => {
       return newState;
     case UPDATE_BOUNDS:
       newState = Object.assign({}, state, {'bounds': action.bounds})
+      return newState;
+    case UPDATE_PRICE:
+      newState = Object.assign({}, state, {'price': action.price})
       return newState;
     default:
       return state;

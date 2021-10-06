@@ -2,9 +2,12 @@ import React from "react";
 import MarkerManager from "../../util/marker_manager";
 
 class BusinessMap extends React.Component {
-  //...
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
+    const { filters } = this.props;
     // set the map to show SF
     const mapOptions = {
       center: { lat: 37.7758, lng: -122.435 }, // this is SF
@@ -29,17 +32,32 @@ class BusinessMap extends React.Component {
       let swLng = sW.lng();
 
       const bounds = { northEast: {lat: neLat, lng: neLng}, southWest: { lat: swLat, lng: swLng} };
-      this.props.updateSearchFilters("", "", bounds);
+      this.props.updateSearchFilters({
+        keyword: filters.keyword,
+        price: filters.price,
+        location: filters.location,
+        bounds: bounds
+      });
     })
+
   }
 
-  componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.businesses);
+  componentDidUpdate(prevProps, prevState) {
+    const { filters, businesses } = this.props;
+    this.MarkerManager.updateMarkers(businesses);
+    if (prevProps.filters != this.props.filters) {
+      this.props.updateSearchFilters({
+        keyword: filters.keyword,
+        price: filters.price,
+        location: filters.location,
+        bounds: ""
+      });
+    }
   }
 
   render() {
     return (
-      <div id='map-container' ref={ map => this.mapNode = map }> 
+      <div id='map-container' key={this.props.filters} ref={ map => this.mapNode = map }> 
 
       </div>
     )
