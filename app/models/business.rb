@@ -24,13 +24,13 @@ class Business < ApplicationRecord
   end
 
   def self.filter_businesses(keyword, location, bounds)
-    latmin, latmax = bounds[:southWest][:lat], bounds[:northEast][:lat]
-    lngmin, lngmax = bounds[:southWest][:lng], bounds[:northEast][:lng]
     keyword = (keyword) ? keyword.downcase : "" 
     location = (location) ? location.downcase : "" 
     if (!keyword && !location)
       Business.all
     else
+      latmin, latmax = bounds[:southWest][:lat], bounds[:northEast][:lat]
+      lngmin, lngmax = bounds[:southWest][:lng], bounds[:northEast][:lng]
       Business.joins(:cuisines)
         .where("(lower(cuisines.cuisine_type) LIKE ?) OR (lower(businesses.name) LIKE ?)", "%#{keyword}%", "%#{keyword}%")
         .where("(lower(businesses.city) LIKE ?) OR (lower(businesses.zip_code) LIKE ?)", "%#{location}%", "%#{location}%")

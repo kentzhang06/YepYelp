@@ -11,7 +11,8 @@ class BusinessIndex extends React.Component {
     this.state = {
       cuisine: "none",
       price: "none",
-      loc: "none"
+      loc: "none",
+
     }
 
     this.allCategories = [
@@ -28,6 +29,11 @@ class BusinessIndex extends React.Component {
       "San Mateo",
       "San Jose"
     ];
+
+    this.state = {
+      search: parseCategory(this.props.history),
+      location: parseLocation(this.props.history)
+    };
 
     this.handleCategoryBox = this.handleCategoryBox.bind(this);
   }

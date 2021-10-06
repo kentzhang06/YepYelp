@@ -21,18 +21,18 @@ class SearchBar extends React.Component {
     this.setState({ location: e.target.value });
   }
 
-  componentDidMount() {
-    this.props.updateSearchFilters(this.state.search, this.state.location, "");
-  }
+  // componentDidMount() {
+  //   this.props.updateSearchFilters(this.state.search, this.state.location, "");
+  // }
 
   submitSearch() {
-    this.props.updateSearchFilters(this.state.search, this.state.location, "");
     
     if (this.state.search || this.state.location){
       this.props.history.push(`/businesses?keyword=${this.state.search}&location=${this.state.location}`);
     }else {
       this.props.history.push(`/businesses`);
     }
+    // this.props.updateSearchFilters(this.state.search, this.state.location, "");
     console.log(this.state);
   }
 
