@@ -1,6 +1,7 @@
 import React from "react";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
 import { withRouter } from "react-router";
+import BusinessShowMap from "./business_show_map";
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -121,9 +122,9 @@ class BusinessShow extends React.Component {
               <button id="business-review-button"><ion-icon name="star-outline"></ion-icon>   Write a Review</button>
             </div>
             <div id="loc-hours-content">
-              <div id="loc-map">
-                MAP
-              </div>
+
+               {/* <BusinessShowMap business={business}/> */}
+
         
               {hoursTable}
 
