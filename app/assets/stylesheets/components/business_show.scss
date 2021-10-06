@@ -120,12 +120,58 @@
   width: 760px;
   height: 3000px;
   // border: 1px solid black;
+  h1 {
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgba(43,39,60,1);
+    margin-top: 20px;
+  }
 
   .review-container {
     width: 200px;
     height: 200px;
     border: 1px solid black;
   }
+}
+
+#map-address-button {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  button {
+    font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    text-align: center;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  button:hover {
+    background-color: rgba(0,0,0,0.12);
+    color: rgba(43,39,60,1);
+    box-shadow: none;
+  }
+}
+
+#address-city-state-stack{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#map-business-address-line {
+  color: rgba(0,131,143,1);
 }
 
 #business-info-right {
@@ -190,13 +236,16 @@
   font-size: 14px;
   font-weight: 600;
   font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #999;
 }
 
 #business-show-map {
   width: 315px;
   height: 150px;
   margin-top: 15px;
-  border: 1px solid black;
+  
 }
 
 #hours-table {

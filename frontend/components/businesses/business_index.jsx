@@ -86,11 +86,8 @@ class BusinessIndex extends React.Component {
 
     let headerCategory = "The Best";
     let keyword = parseCategory(history).toLowerCase();
-    let locationTitle = "";
-    if (this.state.location !== "") {
-      locationTitle = this.state.location;
-    }
-    let loc = parseLocation(history) || locationTitle;
+
+    let loc = (parseLocation(history)) ? ("near " + parseLocation(history)) : "";
 
     if (keyword == "restaurant" || keyword == "restaurants") {
       headerCategory = "The Best";
@@ -138,7 +135,7 @@ class BusinessIndex extends React.Component {
             </form>
           </div>
           <ul className="business-index-main-content">
-            <h1>{headerCategory} Restaurants near {loc}</h1>
+            <h1>{headerCategory} Restaurants {loc}</h1>
             <h2>All Results </h2>
             { displayBusinesses }
           </ul>

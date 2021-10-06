@@ -15,6 +15,7 @@ class BusinessShow extends React.Component {
 
   render() {
     const { business, history } = this.props;
+    if (!business) return null;
 
     let display = (business) ?
       <div className="business-title">
@@ -121,9 +122,24 @@ class BusinessShow extends React.Component {
             <div id="business-buttons">
               <button id="business-review-button"><ion-icon name="star-outline"></ion-icon>   Write a Review</button>
             </div>
-            <div id="loc-hours-content">
 
-               {/* <BusinessShowMap business={business}/> */}
+            <h1>
+              Location &#38; Hours
+            </h1>
+            <div id="loc-hours-content">
+              <div>
+
+                <BusinessShowMap business={business}/>
+                <div id="map-address-stack">
+                  <div id="map-address-button">
+                    <div id="address-city-state-stack">
+                      <div id="map-business-address-line">{business.address}</div>
+                      <div>{business.city}, {business.state} {business.zipCode}</div>
+                    </div>
+                    <button>Get Directions</button>
+                  </div>
+                </div>
+              </div>
 
         
               {hoursTable}
