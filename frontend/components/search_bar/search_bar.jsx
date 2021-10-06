@@ -7,8 +7,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       search: parseCategory(this.props.history),
-      location: parseLocation(this.props.history),
-      bounds: ""
+      location: parseLocation(this.props.history)
     };
     this.searchCategory = this.searchCategory.bind(this);
     this.searchLocation = this.searchLocation.bind(this);
@@ -23,19 +22,18 @@ class SearchBar extends React.Component {
   }
 
   componentDidMount() {
-    this.props.updateSearchFilters(this.state.search, this.state.location);
-
+    this.props.updateSearchFilters(this.state.search, this.state.location, "");
   }
 
   submitSearch() {
-    this.props.updateSearchFilters(this.state.search, this.state.location);
+    this.props.updateSearchFilters(this.state.search, this.state.location, "");
     
     if (this.state.search || this.state.location){
       this.props.history.push(`/businesses?keyword=${this.state.search}&location=${this.state.location}`);
     }else {
       this.props.history.push(`/businesses`);
     }
-    
+    console.log(this.state);
   }
 
   render() {
