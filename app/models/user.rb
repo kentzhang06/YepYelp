@@ -10,6 +10,11 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: 'Business',
     dependent: :destroy
+  
+  has_many :reviews,
+    foreign_key: :author_id,
+    class_name: 'Review',
+    dependent: :destroy
 
   after_initialize :ensure_session_token
 

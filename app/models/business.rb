@@ -15,6 +15,10 @@ class Business < ApplicationRecord
     through: :business_cuisines,
     source: :cuisine
 
+  has_many :reviews,
+    foreign_key: :business_id,
+    class_name: 'Review'
+
   has_many_attached :photos
 
   def ensure_photo

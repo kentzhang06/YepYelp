@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 BusinessCuisine.destroy_all
+Review.destroy_all
 Business.destroy_all
 Cuisine.destroy_all
 User.destroy_all
@@ -78,211 +79,211 @@ u7 = User.create(
 
 b1 = Business.create(
   name: 'The Burning Sand',
-  address: '998 Hot St.',
+  address: '301 Juda St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94121',
+  zip_code: '94122',
   url: 'racksofmeat.com',
   phone: '715-777-9999',
   price_range: 2,
   opening_hours: '9:30 AM - 11:00 PM',
-  lat: 37.7795,
-  long: -122.5016,
+  lat: 37.761942,
+  long: -122.465707,
   owner_id: u2.id
 )
 
 b2 = Business.create(
   name: 'The Spicy Choji',
-  address: '477 Pig St.',
+  address: '1290 Grove St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94124',
+  zip_code: '94117',
   url: 'thebigguy.com',
   phone: '515-888-9999',
   price_range: 1,
   opening_hours: '10:30 AM - 10:00 PM',
-  lat: 37.7367,
-  long: -122.3854,
+  lat: 37.776539,
+  long: -122.437595,
   owner_id: u2.id
 )
 
 b3 = Business.create(
   name: 'The Hidden Leaf',
-  address: '990 Konoha St.',
+  address: '225 Taylor St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94114',
+  zip_code: '94102',
   url: 'hiddenleaves.com',
   phone: '215-333-9999',
   price_range: 3,
   opening_hours: '4:30 PM - 11:00 PM',
-  lat: 37.7537,
-  long: -122.4376,
+  lat: 37.784382,
+  long: -122.410889,
   owner_id: u3.id
 )
 
 b4 = Business.create(
   name: 'The Spinning Shuriken',
-  address: '200 Sakura St.',
+  address: '65 Liberty St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94116',
+  zip_code: '94110',
   url: 'pink200.com',
   phone: '335-111-9999',
   price_range: 1,
   opening_hours: '5:30 AM - 7:00 PM',
-  lat: 37.7490,
-  long: -122.4923,
+  lat: 37.757163,
+  long: -122.422178,
   owner_id: u4.id
 )
 
 b5 = Business.create(
   name: 'Iruka Ramen',
-  address: '343 Hokage St.',
+  address: '1300 Evans Ave',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94112',
+  zip_code: '94124',
   url: 'sensei123.com',
   phone: '115-773-9929',
   price_range: 3,
   opening_hours: '11:30 AM - 11:30 PM',
-  lat: 37.7208,
-  long: -122.4456,
+  lat: 37.741330,
+  long: -122.381205,
   owner_id: u5.id
 )
 
 b6 = Business.create(
   name: 'The Chunin Exam',
-  address: '99 Shabu St.',
+  address: '585 Cordova St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94132',
+  zip_code: '94112',
   url: 'rocklee.com',
   phone: '555-999-9999',
   price_range: 2,
   opening_hours: '5:30 PM - 10:00 PM',
-  lat: 37.7309,
-  long: -122.4843,
+  lat: 37.708442,
+  long: -122.433996,
   owner_id: u6.id
 )
 
 b7 = Business.create(
   name: 'The Hidden Mist',
-  address: '99 Kisame St.',
+  address: '62 Vernon St',
   city: 'San Francisco',
   state: 'CA',
-  zip_code: '94114',
+  zip_code: '94132',
   url: 'misty99.com',
   phone: '555-999-0931',
   price_range: 3,
   opening_hours: '2:30 PM - 10:00 PM',
-  lat: 37.7587,
-  long: -122.4302,
+  lat: 37.713587,
+  long: -122.467875,
   owner_id: u7.id
 )
 
 b8 = Business.create(
   name: 'Fried Kimimaru',
-  address: '2 Bone St.',
-  city: 'San Francisco',
+  address: '201 S Delaware St',
+  city: 'San Mateo',
   state: 'CA',
-  zip_code: '94158',
+  zip_code: '94401',
   url: 'orochimaru.com',
   phone: '515-919-9191',
   price_range: 1,
   opening_hours: '11:30 AM - 8:00 PM',
-  lat: 37.7727,
-  long: -122.3915,
+  lat: 37.568537,
+  long: -122.320616,
   owner_id: u5.id
 )
 
 b9 = Business.create(
   name: 'Uchiha Udon',
-  address: '99 Noodle St.',
-  city: 'San Francisco',
+  address: '1315 Palm Ave',
+  city: 'San Mateo',
   state: 'CA',
-  zip_code: '94132',
+  zip_code: '94402',
   url: 'sharingan.com',
   phone: '585-900-9009',
   price_range: 2,
   opening_hours: '5:30 AM - 11:00 PM',
-  lat: 37.7369,
-  long: -122.4326,
+  lat: 37.556540,
+  long: -122.315455,
   owner_id: u1.id
 )
 
 b10 = Business.create(
   name: 'Sweet Tsunade',
-  address: '543 Noon St.',
-  city: 'San Francisco',
+  address: '1537 Goody Ln',
+  city: 'San Jose',
   state: 'CA',
-  zip_code: '94014',
+  zip_code: '95131',
   url: 'thefifth.com',
   phone: '123-999-9446',
   price_range: 1,
   opening_hours: '6:30 PM - 2:00 AM',
-  lat: 37.7058,
-  long: -122.4550,
+  lat: 37.382987,
+  long: -121.888696,
   owner_id: u2.id
 )
 
 b11 = Business.create(
   name: 'Eighth Gate',
-  address: '8 Lee St.',
-  city: 'San Mateo',
+  address: '1642 Ralene Ct',
+  city: 'San Jose',
   state: 'CA',
-  zip_code: '94401',
+  zip_code: '95131',
   url: 'theeighth.com',
   phone: '888-989-9486',
   price_range: 4,
   opening_hours: '8:30 AM - 8:00 PM',
-  lat: 37.5612,
-  long: -122.323441,
+  lat: 37.396877,
+  long: -121.876459,
   owner_id: u5.id
 )
 
 b12 = Business.create(
   name: 'Shadow Clone',
-  address: '905 Noon St.',
-  city: 'San Mateo',
+  address: '920 Toyon Ave',
+  city: 'San Jose',
   state: 'CA',
-  zip_code: '94401',
+  zip_code: '95127',
   url: 'theinfiniteclones.com',
   phone: '123-999-9446',
   price_range: 4,
   opening_hours: '5:30 PM - 12:00 AM',
-  lat: 37.5798,
-  long: -122.3296,
+  lat: 37.391467,
+  long: -121.833077,
   owner_id: u7.id
 )
 
 b13 = Business.create(
   name: 'The Chidori',
-  address: '1 Chirp St.',
+  address: '2350 Qume Dr',
   city: 'San Jose',
   state: 'CA',
-  zip_code: '95112',
+  zip_code: '95131',
   url: 'loudmoves.com',
   phone: '780-996-6446',
   price_range: 4,
   opening_hours: '5:30 AM - 6:00 PM',
-  lat: 37.3363,
-  long: -121.8818,
+  lat: 37.397612,
+  long: -121.885967,
   owner_id: u3.id
 )
 
 b14 = Business.create(
   name: 'The Rasengan',
-  address: '9 Ball St.',
-  city: 'San Jose',
+  address: '2416 43rd Ave',
+  city: 'San Francisco',
   state: 'CA',
-  zip_code: '95112',
+  zip_code: '94116',
   url: 'rasenganmoves.com',
   phone: '110-116-6116',
   price_range: 4,
   opening_hours: '7:30 AM - 7:00 PM',
-  lat: 37.3517,
-  long: -121.8957,
+  lat: 37.741328,
+  long: -122.501075,
   owner_id: u7.id
 )
 
@@ -545,3 +546,270 @@ bc17 = BusinessCuisine.create(cuisine_id: cuisine1.id, business_id: b13.id)
 bc18 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b13.id)
 bc19 = BusinessCuisine.create(cuisine_id: cuisine2.id, business_id: b14.id)
 bc20 = BusinessCuisine.create(cuisine_id: cuisine6.id, business_id: b14.id)
+
+r1 = Review.create(
+  body: "Will definitely come back! Great service",
+  author_id: u1.id,
+  business_id: b1.id,
+  rating: 4
+)
+r2 = Review.create(
+  body: "Food taste great",
+  author_id: u2.id,
+  business_id: b1.id,
+  rating: 4
+)
+r3 = Review.create(
+  body: "Found a hair in my food",
+  author_id: u3.id,
+  business_id: b1.id,
+  rating: 2
+)
+
+r4 = Review.create(
+  body: "Interesting food",
+  author_id: u4.id,
+  business_id: b2.id,
+  rating: 4
+)
+r5 = Review.create(
+  body: "Pretty chill here",
+  author_id: u5.id,
+  business_id: b2.id,
+  rating: 5
+)
+r6 = Review.create(
+  body: "Waitress yelled at me",
+  author_id: u1.id,
+  business_id: b2.id,
+  rating: 1
+)
+
+r7 = Review.create(
+  body: "Slipped on a banana",
+  author_id: u2.id,
+  business_id: b3.id,
+  rating: 1
+)
+r8 = Review.create(
+  body: "Great tasting appetizers",
+  author_id: u5.id,
+  business_id: b3.id,
+  rating: 5
+)
+r9 = Review.create(
+  body: "No clean plates for use",
+  author_id: u7.id,
+  business_id: b3.id,
+  rating: 2
+)
+
+r10 = Review.create(
+  body: "Food was too hot",
+  author_id: u4.id,
+  business_id: b4.id,
+  rating: 3
+)
+r11 = Review.create(
+  body: "Slime in the food",
+  author_id: u6.id,
+  business_id: b4.id,
+  rating: 1
+)
+r12 = Review.create(
+  body: "Bathroom smells like you know what",
+  author_id: u2.id,
+  business_id: b4.id,
+  rating: 1
+)
+
+r13 = Review.create(
+  body: "Cute waiter",
+  author_id: u5.id,
+  business_id: b5.id,
+  rating: 4
+)
+r14 = Review.create(
+  body: "Interesting choice of paintings",
+  author_id: u3.id,
+  business_id: b5.id,
+  rating: 3
+)
+r15 = Review.create(
+  body: "The ceiling is too high",
+  author_id: u7.id,
+  business_id: b5.id,
+  rating: 3
+)
+
+r16 = Review.create(
+  body: "The wait was too long man",
+  author_id: u5.id,
+  business_id: b6.id,
+  rating: 1
+)
+r17 = Review.create(
+  body: "No parking, drove around for hours",
+  author_id: u6.id,
+  business_id: b6.id,
+  rating: 1
+)
+r18 = Review.create(
+  body: "Excellent service, owner was very kind",
+  author_id: u2.id,
+  business_id: b6.id,
+  rating: 5
+)
+
+r19 = Review.create(
+  body: "Dude beat me up in the back",
+  author_id: u1.id,
+  business_id: b7.id,
+  rating: 1
+)
+r20 = Review.create(
+  body: "Awesome plating on the food",
+  author_id: u7.id,
+  business_id: b7.id,
+  rating: 5
+)
+r21 = Review.create(
+  body: "Charged me for napkins",
+  author_id: u6.id,
+  business_id: b7.id,
+  rating: 2
+)
+
+r22 = Review.create(
+  body: "Food too greasy",
+  author_id: u5.id,
+  business_id: b8.id,
+  rating: 1
+)
+r23 = Review.create(
+  body: "Mom's spaghetti",
+  author_id: u2.id,
+  business_id: b8.id,
+  rating: 4
+)
+r24 = Review.create(
+  body: "Palms are sweaty, knees weak, arms are...",
+  author_id: u1.id,
+  business_id: b8.id,
+  rating: 3
+)
+
+r25 = Review.create(
+  body: "Love the sour taste to the fish",
+  author_id: u1.id,
+  business_id: b9.id,
+  rating: 5
+)
+r26 = Review.create(
+  body: "A little bit too much sauce",
+  author_id: u1.id,
+  business_id: b9.id,
+  rating: 3
+)
+r27 = Review.create(
+  body: "AWESOME FOODDDDDDDD",
+  author_id: u1.id,
+  business_id: b9.id,
+  rating: 5
+)
+
+r28 = Review.create(
+  body: "Too sweetttt Aiyah",
+  author_id: u6.id,
+  business_id: b10.id,
+  rating: 2
+)
+r29 = Review.create(
+  body: "No Parking holy crappp",
+  author_id: u3.id,
+  business_id: b10.id,
+  rating: 1
+)
+r30 = Review.create(
+  body: "Drinks were perfect!",
+  author_id: u6.id,
+  business_id: b10.id,
+  rating: 5
+)
+
+r31 = Review.create(
+  body: "Tripped on the table",
+  author_id: u4.id,
+  business_id: b11.id,
+  rating: 3
+)
+r32 = Review.create(
+  body: "Broke my nose climbing the on the stove",
+  author_id: u2.id,
+  business_id: b11.id,
+  rating: 2
+)
+r33 = Review.create(
+  body: "Owner was mean to me",
+  author_id: u6.id,
+  business_id: b11.id,
+  rating: 1
+)
+
+r34 = Review.create(
+  body: "Smelly waiters",
+  author_id: u1.id,
+  business_id: b12.id,
+  rating: 3
+)
+r35 = Review.create(
+  body: "Lights too dim, way too dark inside",
+  author_id: u5.id,
+  business_id: b12.id,
+  rating: 2
+)
+r36 = Review.create(
+  body: "Had my first date here, have to say it didn't go too well, but food great",
+  author_id: u7.id,
+  business_id: b12.id,
+  rating: 5
+)
+
+r37 = Review.create(
+  body: "INCREDIBLE TASTING FOOD",
+  author_id: u2.id,
+  business_id: b13.id,
+  rating: 5
+)
+r38 = Review.create(
+  body: "YOU GUYS MUST COME HERE, EVERYTHING WAS GREAT",
+  author_id: u3.id,
+  business_id: b13.id,
+  rating: 5
+)
+r39 = Review.create(
+  body: "THE TV IS GREAT",
+  author_id: u5.id,
+  business_id: b13.id,
+  rating: 5
+)
+
+r40 = Review.create(
+  body: "The server poured cold water on my head",
+  author_id: u1.id,
+  business_id: b14.id,
+  rating: 1
+)
+r41 = Review.create(
+  body: "Portions were too small",
+  author_id: u4.id,
+  business_id: b14.id,
+  rating: 2
+)
+r42 = Review.create(
+  body: "The food was too cold",
+  author_id: u6.id,
+  business_id: b10.id,
+  rating: 3
+)
+
