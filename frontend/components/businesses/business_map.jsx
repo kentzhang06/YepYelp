@@ -44,7 +44,6 @@ class BusinessMap extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { filters, businesses } = this.props;
-    this.MarkerManager.updateMarkers(businesses);
     if (prevProps.filters != this.props.filters) {
       this.props.updateSearchFilters({
         keyword: filters.keyword,
@@ -53,6 +52,7 @@ class BusinessMap extends React.Component {
         bounds: ""
       });
     }
+    this.MarkerManager.updateMarkers(businesses);
   }
 
   render() {

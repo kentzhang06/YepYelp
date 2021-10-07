@@ -8,11 +8,14 @@ class BusinessReviews extends React.Component {
   render() {
     const { reviews } = this.props;
 
-    const displayReviews = reviews.map((review) => {
+    const displayReviews = reviews.map((review, i) => {
       return (
-        <div className="single-review-container">
-          <div key={review.id} className={`review-${review.rating}star`}>
-            {/* <img className="stars" src={window.starsUrl} alt="" /> */}
+        <div className="single-review-container" key={review.id}>
+          <div className="stars-date">
+            <div className={`review-${review.rating}star`}>
+              {/* <img className="stars" src={window.starsUrl} alt="" /> */}
+            </div>
+            <div>{review.createdAt.slice(0, 10)}</div>
           </div>
           <div className="review-content">
             <div>
@@ -25,6 +28,7 @@ class BusinessReviews extends React.Component {
         </div>
       )
     });
+
     return (
       <ul>
         {displayReviews}

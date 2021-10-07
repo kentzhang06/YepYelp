@@ -19,7 +19,7 @@
   #photo-button {
     position: absolute;
     top: 84%;
-    left: 69.5%;
+    left: 71.5%;
     width: 200px;
     height: 50px;
     font-size: 16px;
@@ -46,7 +46,7 @@
   .business-title {
     position: absolute;
     top: 70%;
-    left: 20%;
+    left: 17%;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 48px;
     font-weight: 700px;
@@ -96,6 +96,7 @@
   padding-right: 16px;
   padding-top: 8px;
   border: none;
+  cursor: pointer;
 
   ion-icon {
     font-size: 20px;
@@ -161,6 +162,7 @@
     background-color: rgba(0,0,0,0.12);
     color: rgba(43,39,60,1);
     box-shadow: none;
+    cursor: pointer;
   }
 }
 
@@ -186,6 +188,8 @@
   margin-left: 20px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
+  background-color: ghostwhite;
+  box-shadow: 0 0 5px black;
 
   #business-url, #business-phone {
     display: flex;

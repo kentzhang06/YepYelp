@@ -1,7 +1,19 @@
 .single-review-container {
   width: inherit;
   height: 150px;
+  border-radius: 4px;
+  background-color: ghostwhite;
   margin-bottom: 20px;
+  padding: 10px;
+  box-shadow: 0 0 5px black;
+}
+
+.stars-date {
+  display: flex;
+  align-items: center;
+  div {
+    margin-right: 8px;
+  }
 }
 
 .review-5star {
