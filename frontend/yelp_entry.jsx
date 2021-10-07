@@ -4,6 +4,7 @@ import configureStore from "./store/store";
 import Root from "./components/root";
 import {login, signup, logout} from "./actions/session_actions";
 import { createBusiness, fetchBusiness, fetchBusinesses } from "./actions/business_actions";
+import { createReview, editReview, fetchReviews, deleteReview } from "./actions/review_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -29,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fetchBusinesses = fetchBusinesses;
     window.fetchBusiness = fetchBusiness;
     window.createBusiness = createBusiness;
+
+    window.fetchReviews = fetchReviews;
+    window.createReview = createReview;
+    window.editReview = editReview;
+    window.deleteReview = deleteReview;
     // TESTING END
 
   const root = document.getElementById('root');

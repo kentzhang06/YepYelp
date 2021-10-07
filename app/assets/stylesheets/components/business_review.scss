@@ -1,0 +1,52 @@
+.single-review-container {
+  width: inherit;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.review-5star {
+  background: image-url("stars.png") no-repeat;
+  background-position: 0px -288px;
+  width: 180px;
+  height: 32px;
+}
+
+.review-4star {
+  background: image-url("stars.png") no-repeat;
+  background-position: 0px -256px;
+  width: 180px;
+  height: 32px;
+}
+
+.review-3star {
+  background: image-url("stars.png") no-repeat;
+  background-position: 0px -192px;
+  width: 180px;
+  height: 32px;
+}
+
+.review-2star {
+  background: image-url("stars.png") no-repeat;
+  background-position: 0px -128px;
+  width: 180px;
+  height: 32px;
+}
+
+.review-1star {
+  background: image-url("stars.png") no-repeat;
+  background-position: 0px -64px;
+  width: 180px;
+  height: 32px;
+}
+
+
+
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+  div {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

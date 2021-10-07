@@ -2,6 +2,7 @@ import React from "react";
 import NavSearchBarContainer from "../nav_search_bar/nav_search_bar_container";
 import { withRouter } from "react-router";
 import BusinessShowMap from "./business_show_map";
+import BusinessReviews from "../reviews/business_reviews";
 
 class BusinessShow extends React.Component {
   constructor(props) {
@@ -11,11 +12,12 @@ class BusinessShow extends React.Component {
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId)
     .then(() => window.scrollTo(0, 0));
+    this.props.fetchReviews(this.props.match.params.businessId);
   }
 
   render() {
-    const { business, history } = this.props;
-    if (!business) return null;
+    const { business, history, reviews } = this.props;
+    if (!business || !reviews) return null;
     let directionLink = `https://www.google.com/maps/dir//${business.address}+${business.city}+${business.state}+${business.zipCode}`;
 
     let display = (business) ?
@@ -150,9 +152,10 @@ class BusinessShow extends React.Component {
               {hoursTable}
 
             </div>
-            <div className="review-container">
+            {/* <div className="review-container">
               REVIEW 1
-            </div>
+            </div> */}
+            <BusinessReviews reviews={reviews}/>
           </div>
           {businessInfo}
         </div>

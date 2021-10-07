@@ -4,11 +4,12 @@ class Api::BusinessesController < ApplicationController
   def index
   
     @businesses = Business.filter_businesses(params[:keyword], params[:location], params[:bounds], params[:price])
+    
     render :index
   end
 
   def show
-    @business = Business.with_attached_photos.includes(:cuisines).find_by(id: params[:id])
+    @business = Business.with_attached_photos.includes(:cuisines, :reviews).find_by(id: params[:id])
     render :show
   end
 
