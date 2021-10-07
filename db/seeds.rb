@@ -79,7 +79,7 @@ u7 = User.create(
 
 b1 = Business.create(
   name: 'The Burning Sand',
-  address: '301 Juda St',
+  address: '301 Judah St',
   city: 'San Francisco',
   state: 'CA',
   zip_code: '94122',

@@ -16,6 +16,7 @@ class BusinessShow extends React.Component {
   render() {
     const { business, history } = this.props;
     if (!business) return null;
+    let directionLink = `https://www.google.com/maps/dir//${business.address}+${business.city}+${business.state}+${business.zipCode}`;
 
     let display = (business) ?
       <div className="business-title">
@@ -65,7 +66,7 @@ class BusinessShow extends React.Component {
         <div id="business-address">
 
           <span id="address-with-pic">
-            <a target="_blank" href={`https://www.google.com/maps/dir//${business.lat},${business.long}`}>Get Directions</a>
+            <a target="_blank" href={directionLink}>Get Directions</a>
 
             <span id="address-string">
               { business.address} { business.city}, { business.state }, { business.zipCode }
@@ -138,7 +139,7 @@ class BusinessShow extends React.Component {
                     </div>
                     <button onClick={(e) => {
                       e.preventDefault();
-                      window.open(`https://www.google.com/maps/dir//${business.lat},${business.long}`, '_blank');
+                      window.open(directionLink, '_blank');
                     }}
                     >Get Directions</button>
                   </div>
