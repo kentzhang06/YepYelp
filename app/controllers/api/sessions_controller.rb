@@ -1,4 +1,9 @@
 class Api::SessionsController < ApplicationController
+  def show
+    @user = current_user
+    render "api/users/show"
+  end
+
   def create
     @user = User.find_by_credentials(
       params[:user][:email],

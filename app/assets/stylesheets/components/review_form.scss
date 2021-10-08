@@ -1,0 +1,17 @@
+.review-forms-container {
+  width: 650px;
+  height: 700px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.review-form-body {
+  width: 625px;
+  height: 370px;
+}

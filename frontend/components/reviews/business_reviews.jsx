@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router";
 
 class BusinessReviews extends React.Component {
   constructor(props) {
@@ -6,7 +7,23 @@ class BusinessReviews extends React.Component {
   }
 
   render() {
-    const { reviews } = this.props;
+    const { reviews, history, match, currentUser } = this.props;
+    const editReviewButton = (review) => (review.author.id === currentUser.id) ?
+      <button className="review-delete-edit-buttons"
+        onClick={() => history.push(`/businesses/${match.params.businessId}/reviews/${review.id}`)}>
+        <ion-icon name="create-outline"></ion-icon>
+        <span className="tooltiptext">Write an update</span>
+      </button>
+      : <div></div>;
+    
+    const deleteReviewButton = (review) => (review.author.id === currentUser.id) ?
+    <button className="review-delete-edit-buttons"
+      onClick={() => this.props.deleteReview(review)}>
+      <ion-icon name="trash"></ion-icon>
+      <span className="tooltiptext">Remove review</span>
+    </button>
+    : <div></div>;
+    
 
     const displayReviews = reviews.map((review, i) => {
       return (
@@ -21,9 +38,13 @@ class BusinessReviews extends React.Component {
             <div>
               {review.author.firstName} {review.author.lastName}
             </div>
-            <div>
+            <div className="review-body">
               {review.body}
             </div>
+          </div>
+          <div className="review-buttons-container">
+            { deleteReviewButton(review) }
+            { editReviewButton(review) }
           </div>
         </div>
       )
@@ -37,4 +58,4 @@ class BusinessReviews extends React.Component {
   }
 }
 
-export default BusinessReviews;
+export default withRouter(BusinessReviews);

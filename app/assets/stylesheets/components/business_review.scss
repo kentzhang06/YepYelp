@@ -62,3 +62,59 @@
     padding-bottom: 5px;
   }
 }
+
+.review-body {
+  width: inherit;
+  height: 40px;
+}
+
+.review-buttons-container {
+  display: flex;
+  width: inherit;
+  justify-content: flex-end;
+}
+
+.review-delete-edit-buttons {
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 20px;
+  transition: all 1.5s ease;
+  margin: 5px;
+  position: relative;
+  ion-icon {
+    pointer-events :none;
+  }
+}
+
+.review-delete-edit-buttons:hover {
+  background: linear-gradient(#fad6a5, rgb(214, 195, 195));
+}
+
+/* Tooltip text */
+.review-delete-edit-buttons .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  width: 120px;
+  bottom: 110%;
+  left: 50%;
+  margin-left: -60px;
+  z-index: 1;
+}
+
+.review-delete-edit-buttons:hover .tooltiptext {
+  visibility: visible;
+}
+

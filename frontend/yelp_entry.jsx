@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
-import {login, signup, logout} from "./actions/session_actions";
+import {login, signup, logout, getCurrentUser} from "./actions/session_actions";
 import { createBusiness, fetchBusiness, fetchBusinesses } from "./actions/business_actions";
 import { createReview, editReview, fetchReviews, deleteReview } from "./actions/review_actions";
 
@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createReview = createReview;
     window.editReview = editReview;
     window.deleteReview = deleteReview;
+
+    window.getCurrentUser = getCurrentUser;
     // TESTING END
 
   const root = document.getElementById('root');

@@ -7,6 +7,7 @@ import BusinessReviews from "../reviews/business_reviews";
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -16,7 +17,7 @@ class BusinessShow extends React.Component {
   }
 
   render() {
-    const { business, history, reviews } = this.props;
+    const { business, history, reviews, currentUser, deleteReview } = this.props;
     if (!business || !reviews) return null;
     let directionLink = `https://www.google.com/maps/dir//${business.address}+${business.city}+${business.state}+${business.zipCode}`;
 
@@ -71,7 +72,7 @@ class BusinessShow extends React.Component {
             <a target="_blank" href={directionLink}>Get Directions</a>
 
             <span id="address-string">
-              { business.address} { business.city}, { business.state }, { business.zipCode }
+              { business.address}, { business.city}, { business.state }, { business.zipCode }
             </span>
           </span>
           <img src={window.directionUrl} alt="" />
@@ -123,7 +124,13 @@ class BusinessShow extends React.Component {
         <div className="business-content">
           <div id="business-main-content">
             <div id="business-buttons">
-              <button id="business-review-button"><ion-icon name="star-outline"></ion-icon>   Write a Review</button>
+              <button 
+                id="business-review-button"
+                onClick={() => history.push(`/businesses/${business.id}/reviews`)}
+              >
+                <ion-icon name="star-outline"></ion-icon>
+                Write a Review
+              </button>
             </div>
 
             <h1>
@@ -132,7 +139,7 @@ class BusinessShow extends React.Component {
             <div id="loc-hours-content">
               <div>
 
-                <BusinessShowMap business={business}/>
+                <BusinessShowMap business={business} />
                 <div id="map-address-stack">
                   <div id="map-address-button">
                     <div id="address-city-state-stack">
@@ -155,7 +162,7 @@ class BusinessShow extends React.Component {
             {/* <div className="review-container">
               REVIEW 1
             </div> */}
-            <BusinessReviews reviews={reviews}/>
+            <BusinessReviews reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
           </div>
           {businessInfo}
         </div>
