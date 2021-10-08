@@ -39,7 +39,7 @@ class BusinessIndex extends React.Component {
     this.setState({ [field]: e.target.value });
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProp, prevState) {
     if (prevState.keyword !== this.state.keyword || prevState.location !== this.state.location) {
       this.props.history.push(`/businesses?keyword=${this.state.keyword}&location=${this.state.location}`);
     }
