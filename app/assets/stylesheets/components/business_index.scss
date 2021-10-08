@@ -91,6 +91,9 @@
 #map {
   width: 400px;
   height: 400px;
+  top: 118px;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
   margin-right: 50px;
 }
 
