@@ -39,14 +39,6 @@ export function updateSearchFilters({keyword, price, location, bounds}) {
     dispatch(updateLoc(location));
     dispatch(updateBounds(bounds));
     return fetchBusinesses(getState().ui.filters)(dispatch);
-    // delicious curry!
   };
 }
 
-// export function updateLocation(location) {
-//   return (dispatch, getState) => {
-//     dispatch(updateLoc(location));
-//     return fetchBusinesses(getState().ui.filters)(dispatch);
-//     // delicious curry!
-//   };
-// }

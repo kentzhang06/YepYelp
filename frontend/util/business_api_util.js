@@ -2,8 +2,7 @@ export const fetchBusinesses = (filters) => {
   return $.ajax({
     url: '/api/businesses',
     method: 'GET',
-    data: filters,
-    error: (err) => console.log(err)
+    data: filters
   });
 };
 

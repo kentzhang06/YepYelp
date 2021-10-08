@@ -36,20 +36,10 @@ class BusinessIndex extends React.Component {
   }
 
   handleFilter(field, e) {
-    // return (e) => {
-    //   this.setState({ [field]: e.target.value });
-    //   console.log(this.state);
-    // }
-    console.log(this.state);
     this.setState({ [field]: e.target.value });
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // if (this.state.keyword || this.state.location){
-    //   this.props.history.push(`/businesses?keyword=${this.state.keyword}&location=${this.state.location}`);
-    // }else {
-    //   this.props.history.push(`/businesses`);
-    // }
+  componentDidUpdate(prevState) {
     if (prevState.keyword !== this.state.keyword || prevState.location !== this.state.location) {
       this.props.history.push(`/businesses?keyword=${this.state.keyword}&location=${this.state.location}`);
     }
