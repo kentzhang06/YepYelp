@@ -23,7 +23,9 @@ class BusinessShow extends React.Component {
 
     let display = (business) ?
       <div className="business-title">
-        { business.name } <br />
+        <h1>
+          { business.name } <br />
+        </h1> 
         <div id="info-under-title">
           <b>
             <div id="claimed-section">
@@ -109,7 +111,7 @@ class BusinessShow extends React.Component {
     let photosButton = (business) ?
       <button id="photo-button"
         onClick={() => history.push(`/biz_photos/${business.id}`)}
-        >View All Photos
+        ><span>Photos</span>
       </button>
       : <div></div>;
 
@@ -162,7 +164,7 @@ class BusinessShow extends React.Component {
             {/* <div className="review-container">
               REVIEW 1
             </div> */}
-            <BusinessReviews reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
+            <BusinessReviews key={history}reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
           </div>
           {businessInfo}
         </div>

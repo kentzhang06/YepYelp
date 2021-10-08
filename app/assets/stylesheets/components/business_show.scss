@@ -1,6 +1,6 @@
 
 .business-image-background {
-  position: relative;
+  position: absolute;
   text-align: center;
   display: flex;
   width: 99vw;
@@ -16,12 +16,13 @@
     z-index: -5;
   }
 
+
   #photo-button {
-    position: absolute;
-    top: 84%;
-    left: 71.5%;
+    position: relative;
     width: 200px;
     height: 50px;
+    top: 80%;
+    left: -73%;
     font-size: 16px;
     color: white;
     background-color: transparent;
@@ -35,6 +36,9 @@
     border-radius: 4px;
     transition: all 0.8s;
     cursor: pointer;
+    span {
+      width: 250px;
+    }
   }
 
   #photo-button:hover {
@@ -44,9 +48,10 @@
   }
 
   .business-title {
-    position: absolute;
-    top: 70%;
-    left: 17%;
+    position: relative;
+
+    top: 65%;
+    left: -80%;
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 48px;
     font-weight: 700px;
@@ -54,6 +59,10 @@
     color: white;
     letter-spacing: -0.4px;
     text-align: left;
+    height: 150px;
+    p {
+      width: 900px;
+    }
     #info-under-title {
       font-size: 16px;
       b {
@@ -105,10 +114,12 @@
 
 }
 
+
+
 .business-content {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 500px;
 }
 
 #business-review-button:hover {
