@@ -26,7 +26,7 @@ class BusinessReviews extends React.Component {
     : <div></div>;
     
 
-    const displayReviews = reviews.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1 : -1).map((review, i) => {
+    const displayReviews = reviews.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1 : -1).map((review) => {
       return (
         <div className="single-review-container" key={review.id}>
           <div className="business-review-author-image">

@@ -33,14 +33,15 @@ class BusinessIndexItem extends React.Component {
         {photo}
         <div className='business-item-content'>
           <span>{ index }. {business.name} </span><br /> <br />
-          <p>Address: {business.address} </p><br />
-          <p>City: {business.city} </p><br />
-          <p>State: {business.state} </p><br />
-          <p>Zip Code: {business.zipCode} </p><br />
           <div className="item-cuisines">
             {displayCuisines}
             <div> {'$'.repeat(business.priceRange)} </div>
           </div>
+          <div className="item-addresses">
+            <p>{business.address}  </p><br />
+            <p>{business.city}, {business.state}, {business.zipCode}</p><br />
+          </div> <br />
+          <p>Hours: {business.openingHours}</p>
         </div>
       </li>
     )
