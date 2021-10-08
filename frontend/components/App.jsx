@@ -11,20 +11,22 @@ import BusinessShowContainer from "./businesses/business_show_container";
 import EditReviewFormContainer from "./reviews/edit_review_form_container";
 import GalleryContainer from "./image_gallery/gallery_container";
 import CreateReviewFormContainer from "./reviews/create_review_form_container";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div>
     <header>
+      <Footer />
     </header>
 
     <Switch>
       <Route exact path="/" component={Home} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
-      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
-      <ProtectedRoute exact path="/businesses/:businessId/reviews" component={CreateReviewFormContainer} />
       <ProtectedRoute exact path="/businesses/:businessId/reviews/:reviewId" component={EditReviewFormContainer} />
-      <Route path="/businesses" component={BusinessIndexContainer} />
+      <ProtectedRoute exact path="/businesses/:businessId/reviews" component={CreateReviewFormContainer} />
+      <Route exact path="/businesses" component={BusinessIndexContainer} />
+      <Route exact path="/businesses/:businessId" component={BusinessShowContainer} />
       <Route exact path="/biz_photos/:businessId" component={GalleryContainer} />
       <Route component={ErrorPage}/>
 

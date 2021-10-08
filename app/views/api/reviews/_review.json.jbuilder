@@ -5,3 +5,4 @@ json.author do
   json.partial! 'api/users/user', user: review.author
 end
 json.createdAt review.created_at
+json.updatedAt review.updated_at

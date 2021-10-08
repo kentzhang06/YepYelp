@@ -1,0 +1,40 @@
+.footer{
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: transparent;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Headland One', serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.right-bio-links {
+  display: flex;
+  align-items: center;
+
+  p {
+    padding-inline: 30px;
+    a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: black;
+      transition: all 0.6s;
+
+      ion-icon {
+        font-size: 30px;
+      }
+    }
+    a:hover {
+      color: #E07B00;
+    }
+  }
+
+
+}

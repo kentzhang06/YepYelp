@@ -7,7 +7,8 @@ import { fetchBusiness } from "../../actions/business_actions";
 const mapStateToProps = ( {entities, session}, ownProps) => {
   return {
     business: entities.businesses[ownProps.match.params.businessId],
-    currentUser: entities.users[session.id]
+    currentUser: entities.users[session.id],
+    reviews: Object.values(entities.reviews)
   }
 }
 

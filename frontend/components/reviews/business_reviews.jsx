@@ -8,7 +8,8 @@ class BusinessReviews extends React.Component {
 
   render() {
     const { reviews, history, match, currentUser } = this.props;
-    const editReviewButton = (review) => (review.author.id === currentUser.id) ?
+    
+    const editReviewButton = (review) => (currentUser && (review.author.id === currentUser.id)) ?
       <button className="review-delete-edit-buttons"
         onClick={() => history.push(`/businesses/${match.params.businessId}/reviews/${review.id}`)}>
         <ion-icon name="create-outline"></ion-icon>
@@ -16,7 +17,7 @@ class BusinessReviews extends React.Component {
       </button>
       : <div></div>;
     
-    const deleteReviewButton = (review) => (review.author.id === currentUser.id) ?
+    const deleteReviewButton = (review) => (currentUser && (review.author.id === currentUser.id)) ?
     <button className="review-delete-edit-buttons"
       onClick={() => this.props.deleteReview(review)}>
       <ion-icon name="trash"></ion-icon>
@@ -25,19 +26,22 @@ class BusinessReviews extends React.Component {
     : <div></div>;
     
 
-    const displayReviews = reviews.map((review, i) => {
+    const displayReviews = reviews.sort((a, b) => (a.updatedAt < b.updatedAt) ? 1 : -1).map((review, i) => {
       return (
         <div className="single-review-container" key={review.id}>
+          <div className="business-review-author-image">
+            <img src={review.author.image} alt="" />
+            <div>
+              {review.author.firstName} {review.author.lastName}
+            </div>
+          </div>
           <div className="stars-date">
             <div className={`review-${review.rating}star`}>
-              {/* <img className="stars" src={window.starsUrl} alt="" /> */}
+              
             </div>
             <div>{review.createdAt.slice(0, 10)}</div>
           </div>
           <div className="review-content">
-            <div>
-              {review.author.firstName} {review.author.lastName}
-            </div>
             <div className="review-body">
               {review.body}
             </div>

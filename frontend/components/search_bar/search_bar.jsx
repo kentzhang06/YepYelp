@@ -47,10 +47,10 @@ class SearchBar extends React.Component {
     return (
       <div key={history}>
         <form id="search-form">
-          <span className="search-label" id="find-label">Find</span>
+          <div className="search-label" id="find-label">Find</div>
 
           <input type="text" value={this.state.search} placeholder="restaurants, villages, academies..." onChange={this.searchCategory}/>
-          <span className="search-label">Near</span>
+          <div className="search-label">Near</div>
           <input type="text" value={this.state.location} placeholder="San Francisco, CA" onChange={this.searchLocation}/>
           <button onClick={this.submitSearch}><ion-icon name="search-outline"></ion-icon></button>
         </form>

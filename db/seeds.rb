@@ -41,7 +41,7 @@ u3 = User.create(
   email: "naruto@ninja.com", 
   password: "ninetail", 
   first_name: "Naruto", 
-  last_name: "Uzimaki",
+  last_name: "Uzumaki",
   zip_code: "94567"
 )
 
@@ -76,6 +76,33 @@ u7 = User.create(
   last_name: "Hyuga",
   zip_code: "95632"
 )
+
+uimg1 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/sasuke.png')
+uimg2 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/itachi.jpeg')
+uimg3 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/kakashi.jpeg')
+uimg4 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/naruto.jpeg')
+uimg5 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/sakura.png')
+uimg6 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/shino.jpg')
+uimg7 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/rocklee.jpg')
+uimg8 = open('https://aa-yelp-clone-pro.s3.us-west-1.amazonaws.com/users/hinata.png')
+
+demo_user.photo.attach(io: uimg1, filename: "sasuke.png")
+u1.photo.attach(io: uimg2, filename: "itachi.jpeg")
+u2.photo.attach(io: uimg3, filename: "kakashi.jpeg")
+u3.photo.attach(io: uimg4, filename: "naruto.jpeg")
+u4.photo.attach(io: uimg5, filename: "sakura.png")
+u5.photo.attach(io: uimg6, filename: "shino.jpg")
+u6.photo.attach(io: uimg7, filename: "rocklee.jpg")
+u7.photo.attach(io: uimg8, filename: "hinata.png")
+
+demo_user.save!
+u1.save!
+u2.save!
+u3.save!
+u4.save!
+u5.save!
+u6.save!
+u7.save!
 
 b1 = Business.create(
   name: 'The Burning Sand',

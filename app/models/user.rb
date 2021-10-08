@@ -16,6 +16,8 @@ class User < ApplicationRecord
     class_name: 'Review',
     dependent: :destroy
 
+  has_one_attached :photo
+
   after_initialize :ensure_session_token
 
   # Class method for finding a user ONLY if we have the correct email and password

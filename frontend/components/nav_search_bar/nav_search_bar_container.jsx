@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { logout } from "../../actions/session_actions";
 import NavSearchBar from "./nav_search_bar";
 
 const mapStateToProps = ({entities, session}) => {
@@ -7,4 +8,10 @@ const mapStateToProps = ({entities, session}) => {
   }
 }
 
-export default connect(mapStateToProps, null)(NavSearchBar);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavSearchBar);

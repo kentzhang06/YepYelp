@@ -153,3 +153,20 @@
   width: 500px;
   height: 500px;
 }
+
+//Reviews
+.business-review-author-image {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  div {
+    font-weight: bold;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}

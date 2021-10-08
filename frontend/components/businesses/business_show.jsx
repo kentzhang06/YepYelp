@@ -115,7 +115,7 @@ class BusinessShow extends React.Component {
 
     return(
       <div>
-        <NavSearchBarContainer />
+        <NavSearchBarContainer business={business}/>
         <div className="business-image-background">
           { imageBackground }
           { display }

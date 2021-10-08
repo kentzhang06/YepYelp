@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   validates_presence_of :body, :author_id, :business_id, :rating
+  default_scope { order("updated_at DESC") }
 
   belongs_to :author,
     foreign_key: :author_id,
