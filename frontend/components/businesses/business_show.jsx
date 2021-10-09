@@ -7,13 +7,21 @@ import BusinessReviews from "../reviews/business_reviews";
 class BusinessShow extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      key: 0
+    }
   }
 
   componentDidMount() {
     this.props.fetchBusiness(this.props.match.params.businessId)
     .then(() => window.scrollTo(0, 0));
     this.props.fetchReviews(this.props.match.params.businessId);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps !== this.props) {
+      this.setState({ key: Math.random() });
+    }
   }
 
   render() {
@@ -164,7 +172,7 @@ class BusinessShow extends React.Component {
             {/* <div className="review-container">
               REVIEW 1
             </div> */}
-            <BusinessReviews key={history}reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
+            <BusinessReviews key={history} reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
           </div>
           {businessInfo}
         </div>
