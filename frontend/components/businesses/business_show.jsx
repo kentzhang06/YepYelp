@@ -19,7 +19,7 @@ class BusinessShow extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps !== this.props) {
+    if (prevState !== this.state) {
       this.setState({ key: Math.random() });
     }
   }
