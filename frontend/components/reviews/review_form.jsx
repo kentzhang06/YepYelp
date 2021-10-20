@@ -32,8 +32,8 @@ class ReviewForm extends React.Component {
       authorId: currentUser.id,
       businessId: match.params.businessId,
       id: reviewId
-    });
-    history.push(`/businesses/${match.params.businessId}`)
+    })
+    .then(() => history.push(`/businesses/${match.params.businessId}`));
   }
 
   update(field) {
