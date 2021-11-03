@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import SearchBarContainer from "../search_bar/search_bar_container";
 
 class NavSearchBar extends React.Component {
@@ -39,19 +40,23 @@ class NavSearchBar extends React.Component {
 
     
 
-    return(
-      <div className='nav-search-bar'>
-        <div id='nav-bar-logo' onClick={() => history.push('/')}>
+    return (
+      <div className="nav-search-bar">
+        <Link id="business-logo" to="/">
           <ion-icon name="fish"></ion-icon>
-          <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
+          <img id="fish-icon" src={window.fishUrl} alt="fishicon" />
           <h2>YEPYELP</h2>
+        </Link>
+        <SearchBarContainer key={history} />
+        <div id="nav-search-right-btns-container">
+          <button id="write-review-button" onClick={this.handleTopReviewButton}>
+            Write a Review
+          </button>
+          {displayLogin}
+          {displaySignup}
         </div>
-        <SearchBarContainer key={history}/>
-        <button id="write-review-button" onClick={this.handleTopReviewButton}>Write a Review</button>
-        {displayLogin}
-        {displaySignup}
       </div>
-    )
+    );
   }
 }
 

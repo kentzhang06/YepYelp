@@ -2,25 +2,43 @@
 .business-main {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 20px;
+  padding-top: 2%;
+  font-size: 1rem;
 
   h1 {
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 2em;
     padding-bottom: 15px;
   }
 
   h2 {
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 1em;
     padding-bottom: 10px;
   }
 }
 
+#business-logo {
+  display: flex;
+  width: 18vw;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-family: 'Headland One', serif;
+  text-align: center;
+  color: black;
+  margin-left: 2%;
+
+  #fish-icon {
+    width: 10%;
+    height: 10%;
+  }
+}
+
 .business-index-main-content {
-  width: 700px;
+  width: 38vw;
   height: auto;
 }
 
@@ -36,45 +54,46 @@
   display: flex;
   font-family: 'Headland One', serif;
   font-weight: 300;
-  width: 650px;
-  height: 220px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: 20vh;
+  margin-bottom: 2%;
   background-color: white;
   border: 1px solid #E07B00;
-  padding: 24px;
+  padding: 3%;
   border-radius: 4px;
 }
 
 .item-addresses {
-  margin-top: 30px;
+  margin-top: 8%;
 }
 
 
 .business-preview-image {
-  width: 220px;
-  height:220px;
+  width: 35%;
   object-fit: cover;
   background-color: black;
   border-radius: 4px;
 }
 
 .business-item-content {
-  margin-left: 25px;
+  margin-left: 10%;
   font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 
   span {
-    font-size: 20px;
+    font-size: 1.5em;
     font-weight: 700;
   }
 }
 
 #cuisine-bullet {
   display: flex;
-  div, span {
-    margin-right: 10px;
-  }
+  align-items: center;
+  margin-right: 7%;
   div {
-    padding-inline: 4px;
+   margin-right: 7%;
+  }
+  .cuisine {
+    padding: 2%;
     border-radius: 4px;
     background-color: #E07B00;
   }
@@ -93,26 +112,16 @@
 	top: 0;
 }
 
-// MAP
-#map {
-  width: 400px;
-  height: 400px;
-  top: 118px;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  margin-right: 50px;
-}
-
 // FILTER BAR
 #filter-side-bar {
-  width: 300px;
-  height: 800px;
+  width: 18vw;
+  height: 50vh;
   // background-color: white;
 
   h3 {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 1em;
     margin: 10px;
   }
 }
@@ -122,7 +131,7 @@
   flex-direction: column;
   font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 0.9em;
 }
 
 .category-radio {
@@ -134,8 +143,8 @@
   display: flex;
   button {
     display: inline-block;
-    width: 80px;
-    padding: 6px 16px;
+    width: 25%;
+    padding: 1% 2%;
     border-width: 1px;
     border-style: solid;
     background-color: #fad6a5;
@@ -157,10 +166,20 @@
   }
 }
 
+#map {
+  width: 25vw;
+  height: 50vh;
+
+
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 26vh;
+}
+
 //MAP
 #map-container {
-  width: 500px;
-  height: 500px;
+  width: 25vw;
+  height: 50vh;
 }
 
 //Reviews

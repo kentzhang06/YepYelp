@@ -21,8 +21,8 @@
   border: none;
   background-color: transparent;
   color: black;
-  padding: 2%;
-  margin-left: 2%;
+  padding: 7px;
+  margin-left: 5px;
 
   font-weight: bold;
   cursor: pointer;
@@ -47,11 +47,6 @@
   cursor: pointer;
 }
 
-#fish-icon {
-  width: 20%;
-  height: 20%;
-}
-
 // HOME
 
 #naruto-home {
@@ -65,12 +60,18 @@
   display: flex;
   flex-direction: column;
 
-  width: 200px;
+  width: 25vw;
   text-decoration: none;
   font-size: 2.5em;
   font-family: 'Headland One', serif;
   text-align: center;
   color: black;
+  margin-bottom: 2%;
+
+  #fish-icon {
+    width: 10%;
+    height: 10%;
+  }
 }
 
 #home-main {
@@ -87,7 +88,6 @@
 // SEARCH BAR CONTAINER
 #search-form {
   display: flex;
-  padding-top: 3%;
   width: 40vw;
   input {
     width: 100%;
@@ -122,4 +122,26 @@
   background-color: white;
   font-weight: bold;
   cursor: default;
+}
+
+.greeting-photo {
+  display: flex;
+  font-family: 'Headland One', serif;
+  font-size: 0.5em;
+  font-weight: bold;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    button {
+      margin-top: 10px;
+    }
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    margin: 5px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
