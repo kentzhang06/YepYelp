@@ -15,9 +15,10 @@ class Home extends React.Component {
 
         <div id='home-main'>
           <Link id='home-logo' to='/'>
-   
-            <ion-icon name="fish"></ion-icon>
-            <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
+            <div>
+              <ion-icon name="fish"></ion-icon>
+              <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
+            </div>
             <h2>YEPYELP</h2>
           </Link>
           <SearchBarContainer />
