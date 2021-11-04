@@ -5,7 +5,7 @@
   padding: 2%;
   font-family: 'Headland One', serif;
   // font-weight: bold;
-  font-size: 2em;
+  font-size: 85%;
 
   #signup-button{
     border: 2px solid black;
@@ -21,8 +21,8 @@
   border: none;
   background-color: transparent;
   color: black;
-  padding: 7px;
-  margin-left: 5px;
+  padding: 1%;
+  margin-left: 3%;
 
   font-weight: bold;
   cursor: pointer;
@@ -127,7 +127,7 @@
 .greeting-photo {
   display: flex;
   font-family: 'Headland One', serif;
-  font-size: 0.5em;
+  font-size: 1em;
   font-weight: bold;
 
   div {
