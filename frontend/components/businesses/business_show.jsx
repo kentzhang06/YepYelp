@@ -29,13 +29,13 @@ class BusinessShow extends React.Component {
     if (!business || !reviews) return null;
     let directionLink = `https://www.google.com/maps/dir//${business.address}+${business.city}+${business.state}+${business.zipCode}`;
 
-    let display = (business) ?
+    let displayTitle = (business) ?
       <div className="business-title">
         <h1>
           { business.name } <br />
         </h1> 
         <div id="info-under-title">
-          <b>
+          <div className="claimed-container">
             <div id="claimed-section">
               <ion-icon name="checkmark-circle-outline"></ion-icon>
               <div>Claimed</div>
@@ -44,10 +44,10 @@ class BusinessShow extends React.Component {
             <div>
               {'$'.repeat(business.priceRange)}
             </div>
-          </b>
-          <p>
-            Hours: { business.openingHours }
-          </p>
+          </div>
+        </div>
+        <div>
+          Hours: { business.openingHours }
         </div>
       </div>
       : <div></div>;
@@ -119,65 +119,76 @@ class BusinessShow extends React.Component {
     let photosButton = (business) ?
       <button id="photo-button"
         onClick={() => history.push(`/biz_photos/${business.id}`)}
-        ><span>Photos</span>
+        >View All Photos
       </button>
       : <div></div>;
 
-    return(
+    return (
       <div>
-        <NavSearchBarContainer business={business}/>
-        <div className="business-image-background">
-          { imageBackground }
-          { display }
-          { photosButton }
+        <NavSearchBarContainer business={business} />
+        <div className="business-image-background">{imageBackground}</div>
+        <div className="title-photos-container">
+          <div className="title-photos">
+            {displayTitle}
+            {photosButton}
+          </div>
         </div>
         <div className="business-content">
           <div id="business-main-content">
             <div id="business-buttons">
-              <button 
+              <button
                 id="business-review-button"
-                onClick={() => history.push(`/businesses/${business.id}/reviews`)}
+                onClick={() =>
+                  history.push(`/businesses/${business.id}/reviews`)
+                }
               >
                 <ion-icon name="star-outline"></ion-icon>
                 Write a Review
               </button>
             </div>
 
-            <h1>
-              Location &#38; Hours
-            </h1>
+            <h1>Location &#38; Hours</h1>
             <div id="loc-hours-content">
               <div>
-
                 <BusinessShowMap business={business} />
                 <div id="map-address-stack">
                   <div id="map-address-button">
                     <div id="address-city-state-stack">
-                      <div id="map-business-address-line">{business.address}</div>
-                      <div>{business.city}, {business.state} {business.zipCode}</div>
+                      <div id="map-business-address-line">
+                        {business.address}
+                      </div>
+                      <div>
+                        {business.city}, {business.state} {business.zipCode}
+                      </div>
                     </div>
-                    <button onClick={(e) => {
-                      e.preventDefault();
-                      window.open(directionLink, '_blank');
-                    }}
-                    >Get Directions</button>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        window.open(directionLink, "_blank");
+                      }}
+                    >
+                      Get Directions
+                    </button>
                   </div>
                 </div>
               </div>
 
-        
               {hoursTable}
-
             </div>
             {/* <div className="review-container">
               REVIEW 1
             </div> */}
-            <BusinessReviews key={history} reviews={reviews} currentUser={currentUser} deleteReview={deleteReview}/>
+            <BusinessReviews
+              key={history}
+              reviews={reviews}
+              currentUser={currentUser}
+              deleteReview={deleteReview}
+            />
           </div>
           {businessInfo}
         </div>
       </div>
-    )
+    );
   }
 }
 
