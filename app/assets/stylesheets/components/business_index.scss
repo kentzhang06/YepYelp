@@ -169,6 +169,7 @@
 #map {
   width: 25vw;
   height: 50vh;
+  min-width: 300px;
 
 
   position: -webkit-sticky; /* Safari */
@@ -180,6 +181,7 @@
 #map-container {
   width: 25vw;
   height: 50vh;
+  min-width: 300px;
 }
 
 //Reviews

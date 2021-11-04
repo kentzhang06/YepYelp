@@ -2,20 +2,19 @@
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
-  height: 150px;
-  width: 150px;
+  height: 14vh;
+  width: 20%;
   object-fit: cover;
-  padding: 2px;
+  padding: 0.5%;
 }
 
 .modal {
   display: none;
   position: fixed;
   z-index: 1;
-  left: -54.5%;
-  top: -37.5%;
+  top: 0;
   width: 100vw;
-  height: 101vh;
+  height: 100vh;
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
@@ -23,28 +22,18 @@
 .modalImage {
   margin: auto;
   display: block;
-  width: 50%;
+  width: 70%;
   height: 100%;
   object-fit: cover;
-  max-width: 700px;
-}
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  height: 150px;
+  max-width: 40vw;
 }
 
 .close {
   position: absolute;
-  top: 15px;
-  right: 35px;
+  top: 1%;
+  right: 2%;
   color: #999;
-  font-size: 40px;
+  font-size: 2em;
   font-weight: bold;
   transition: 0.3s;
 }
@@ -59,24 +48,27 @@
   }
 }
 
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .gallery-content {
-  position: fixed;
-  top: 35%;
-  left: 41.8%;
-  transform: translate(-50%, -50%);   
-  width: 40vw;
+  width: 50vw;
   height: auto;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   h1 {
     font-weight: bold;
-    margin-bottom: 6px;
-    font-size: 30px;
+    margin-bottom: 1%;
+    font-size: 2em;
     line-height: 1.2em;
     color: #333;
-    padding-top: 6px;
-    padding-bottom: 10px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     border-bottom: 1px solid #E07B00;
   }
@@ -85,5 +77,5 @@
 .images-arrangement {
   display: flex;
   flex-wrap: wrap;
-  padding: 4px;
+  padding: 1%;
 }

@@ -35,18 +35,20 @@ class Gallery extends React.Component {
     return (
       <div>
         <NavSearchBarContainer />
-        <div className="gallery-content">
-          <h1>Photos for {business.name}</h1>
-          <div className="images-arrangement">
-            {
-              business.images.map((image, i) => <img className="ImgThumbnail"  key={i} src={image.url} alt="" />)
-            }
-          </div>
-            
-            <div className="modal">
-              <span className="close">×</span>
-              <img className="modalImage" id="img01" />
+        <div className="gallery-container">
+          <div className="gallery-content">
+            <h1>Photos for {business.name}</h1>
+            <div className="images-arrangement">
+              {
+                business.images.map((image, i) => <img className="ImgThumbnail"  key={i} src={image.url} alt="" />)
+              }
             </div>
+              
+              <div className="modal">
+                <span className="close">×</span>
+                <img className="modalImage" id="img01" />
+              </div>
+          </div>
         </div>
       </div>
     )
