@@ -1,13 +1,20 @@
+.form-all-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating-with-form {
+  display: flex;
+  margin-left: 10%;
+}
 .review-forms-container {
   width: 34vw;
   height: 70vh;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: 60%;
-  left: 39%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  justify-content: center;
+  margin-left: 8%;
+
   h1 {
     font-family: 'Poppins','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 900;
@@ -31,12 +38,12 @@
     height: 60px;
     object-fit: cover;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 2%;
   }
 }
 
 #chosen-rating {
-  margin-bottom: 20px;
+  margin-bottom: 2%;
 }
 
 #select-review {
@@ -53,7 +60,7 @@
   display: flex;
   align-items: center;
   p {
-    margin-right: 5px;
+    margin-right: 1%;
   }
 }
 
@@ -61,57 +68,54 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 400px;
-  position: fixed;
-  top: 51%;
-  left: 11%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
+  height: 40vh;
+  // position: fixed;
+  // top: 51%;
+  // left: 11%;
+  // /* bring your own prefixes */
+  // transform: translate(-50%, -50%);
 }
 
 .recent-reviews-item-5rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -500px;
-  width: 108px;
-  height: 20px;
+  width: 7vw;
+  height: 2.3vh;
 }
 
 .recent-reviews-item-4rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -480px;
-  width: 108px;
-  height: 20px;
+  width: 7vw;
+  height: 2.3vh;
 }
 
 .recent-reviews-item-3rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -440px;
-  width: 108px;
-  height: 20px;
+  width: 7vw;
+  height: 2.3vh;
 }
 
 .recent-reviews-item-2rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -400px;
-  width: 108px;
-  height: 20px;
+  width: 7vw;
+  height: 2.3vh;
 }
 
 .recent-reviews-item-1rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -360px;
-  width: 108px;
-  height: 20px;
+  width: 7vw;
+  height: 2.3vh;
 }
 
 .review-forms-container button {
   display: inline-flex;
   cursor: pointer;
-  height: 40px;
-  padding-bottom: 8px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 8px;
+  height: 5vh;
+  padding: 1% 2% 1% 2%;
   position: relative;
   text-align: center;
   border: none;
@@ -119,8 +123,7 @@
   background-color: #E07B00;;
   transition: all 0.6s;
   font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 1em;
   font-weight: 600;
   color: rgba(255,255,255,1);
 }
@@ -131,9 +134,9 @@
 }
 
 .review-form-body {
-  width: 625px;
-  height: 370px;
-  margin-bottom: 20px;
+  width: 39vw;
+  height: 36vh;
+  margin-bottom: 2%;
   border-radius: 4px;
   word-wrap: break-word;
   border: 1px solid #999;
@@ -149,29 +152,29 @@
   padding-left: 20px;
   position: absolute;
   right: 0;
-  top: 110px;
+  top: 200px;
   transition: transform .25s ease;
-  width: 340px;
+  width: 18vw;
   z-index: -5;
-  max-height: 500px;
+  max-height: 300px;
   overflow-y: scroll;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   h2 {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     color: rgba(43,39,60,1);
     font-weight: 900;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: 1.5em;
+    line-height: 2em;
   }
 }
 
 .recent-reviews-item {
-  width: 275px;
-  height: 250px;
+  width: 14vw;
+  height: 25vh;
   border-bottom: 1px solid #E07B00;
   div {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 3%;
+    margin-bottom: 3%;
   }
 }
