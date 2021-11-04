@@ -5,6 +5,7 @@
 
 .rating-with-form {
   display: flex;
+  align-items: center;
   margin-left: 10%;
 }
 .review-forms-container {
@@ -69,46 +70,42 @@
   flex-direction: column;
   justify-content: space-evenly;
   height: 40vh;
-  // position: fixed;
-  // top: 51%;
-  // left: 11%;
-  // /* bring your own prefixes */
-  // transform: translate(-50%, -50%);
+
 }
 
 .recent-reviews-item-5rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -500px;
-  width: 7vw;
-  height: 2.3vh;
+  width: 108px;
+  height: 20px;
 }
 
 .recent-reviews-item-4rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -480px;
-  width: 7vw;
-  height: 2.3vh;
+  width: 108px;
+  height: 20px;
 }
 
 .recent-reviews-item-3rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -440px;
-  width: 7vw;
-  height: 2.3vh;
+  width: 108px;
+  height: 20px;
 }
 
 .recent-reviews-item-2rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -400px;
-  width: 7vw;
-  height: 2.3vh;
+  width: 108px;
+  height: 20px;
 }
 
 .recent-reviews-item-1rating {
   background: image-url("stars.png") no-repeat;
   background-position: 0px -360px;
-  width: 7vw;
-  height: 2.3vh;
+  width: 108px;
+  height: 20px;
 }
 
 .review-forms-container button {
@@ -149,14 +146,14 @@
   border-left: 1px solid #eeeeef;
   border-color: #eeeeef;
   height: 100vh;
-  padding-left: 20px;
+  padding-left: 2%;
   position: absolute;
-  right: 0;
-  top: 200px;
+  right: 0.5vw;
+  top: 15vh;
   transition: transform .25s ease;
-  width: 18vw;
-  z-index: -5;
-  max-height: 300px;
+  width: 20vw;
+  z-index: 5;
+  max-height: 50vh;
   overflow-y: scroll;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size: 1em;
@@ -178,3 +175,11 @@
     margin-bottom: 3%;
   }
 }
+
+@media only screen and (max-width: 1200px) {
+  .recent-reviews-rating-date{
+    flex-direction: column;
+    align-items: start;
+  }
+}
+/* Big desktop (4k) */
