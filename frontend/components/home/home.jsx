@@ -14,13 +14,13 @@ class Home extends React.Component {
         <NavBarContainer />
 
         <div id='home-main'>
-          <Link id='home-logo' to='/'>
+          <div id='home-logo' onClick={() => window.location.reload(false)}>
             <div>
               <ion-icon name="fish"></ion-icon>
               <img id='fish-icon' src={window.fishUrl} alt="fishicon" />
             </div>
             <h2>YEPYELP</h2>
-          </Link>
+          </div>
           <SearchBarContainer />
           <img id="naruto-home" src={window.narutoRamenUrl} alt="naruto" />
         </div>
