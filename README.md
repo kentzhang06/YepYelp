@@ -1,7 +1,10 @@
 ## Demo
 Link to live web application: https://yepyelp.herokuapp.com/#/
 
-# ![image](https://user-images.githubusercontent.com/44277861/136591278-f839868e-f44f-4afb-8f5e-2b4d3f6d3c5c.png)
+![yelp-project2](https://user-images.githubusercontent.com/44277861/140584379-4afcaa34-15f0-4d7f-b9b0-6dd77e90d8fe.gif)
+
+![image](https://user-images.githubusercontent.com/44277861/140584485-f26f1950-7f6f-42a2-9dca-c2a038a43abd.png)
+
 # YepYelp
 
 <table>
@@ -29,7 +32,7 @@ In our frontend, React allows us to optimize our web application into individual
 
 ### Sign up/ Log in
 The sign up page image below displays the front end of the user auth cycle. Sign up and log in displays errors based on necessary fields to fill in or invalid credentials.
-![image](https://user-images.githubusercontent.com/44277861/136595306-13410d62-25dd-4c68-b3f8-a1be8c8428aa.png)
+![image](https://user-images.githubusercontent.com/44277861/140584524-8ac993c6-2363-407c-b649-86eef805e69c.png)
 
 
 ### Business Index Page
@@ -75,14 +78,14 @@ The Google maps API used allows for bounds to be constructed for a certain lat/l
       });
     });
  ```
-![YepYelp - Google Chrome_2](https://user-images.githubusercontent.com/44277861/136594872-974171f2-df55-4240-907b-c720fd46bc8a.jpg)
+![image](https://user-images.githubusercontent.com/44277861/140584596-9846d9a4-5485-4a4e-a66a-f8bc088a764c.png)
 
 ### Business Show Page
 YepYelp's business show page displays a business' hosted images. The view all photos button will redirect the show page to an image gallery containing all images attached to a specific business.
 
-![image](https://user-images.githubusercontent.com/44277861/136595007-4ca4c07b-7325-46f8-99d2-4123907c9b62.png)
+![image](https://user-images.githubusercontent.com/44277861/140584627-15d83a30-f097-4f61-b933-98aa95829aad.png)
 
-![image](https://user-images.githubusercontent.com/44277861/136597859-a3fb9cf5-ac7d-43b8-a866-98cc9226b3a1.png)
+![image](https://user-images.githubusercontent.com/44277861/140584720-1ef0e883-8d67-4425-8490-5c71a74d4ac4.png)
 
 Reviews for a specific business are rendered in descending order based on date/time updated. A user's reviews will be the only review items with edit/delete buttons rendered.
 
@@ -117,13 +120,13 @@ Reviews for a specific business are rendered in descending order based on date/t
     
  ```
 
-![image](https://user-images.githubusercontent.com/44277861/136597940-66636f88-85c0-4f3b-a8f1-475fdb50bd3b.png)
+![image](https://user-images.githubusercontent.com/44277861/140584767-3e622bf9-56b7-4155-8266-34ed705d8e04.png)
 
 
 ### Review Form Page
 YepYelp's review form page allows a logged in user to select a rating on the left side and renders the corresponding rating under the business title. Recent reviews are also rendered on the right hand side.
 
-![image](https://user-images.githubusercontent.com/44277861/136595106-93ed077c-c6c8-49a7-b462-f86d2c48144e.png)
+![image](https://user-images.githubusercontent.com/44277861/140584789-06c25026-9d63-429f-a46b-26a22c45197a.png)
 
 ## Future features
 - [ ] Utilize Google's Geocode API to convert location string into lat/long boundaries for map to correspond to searched location
